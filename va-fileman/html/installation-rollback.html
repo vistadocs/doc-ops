@@ -1,0 +1,1785 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>FileMan 22.2 Installation Guide</title>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoTitle>VA FileMan 22.2</p>
+
+<p class=MsoTitle>Installation, Back-Out, and Rollback Guide</p>
+
+<p class=VASeal><img width=171 height=171 id=image19.jpg
+src="installation-rollback.fld/image001.jpg"
+alt="Department of Veterans Affairs official seal"></p>
+
+<p class=Title2>August 2016</p>
+
+<p class=Title2>&nbsp;</p>
+
+<p class=Title2>Department of Veterans Affairs (VA)</p>
+
+<p class=Title2>Office of Information and Technology (OI&amp;T)</p>
+
+<p class=Title2>Enterprise Program Management Office (EPMO)</p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+</div>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection2>
+
+<p class=Title2>Revision History</p>
+
+<p class=Note><img width=24 height=24
+src="installation-rollback.fld/image002.png"
+alt="Title: Note - Description: Note"><b>    NOTE</b>: The revision history
+cycle begins once changes or enhancements are requested after the Installation,
+Back-Out, and Rollback Guide has been baselined.</p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
+ summary="table describes the revision history including the date, version, description and author of the document."
+ width="100%" style='width:100.0%;border-collapse:collapse;border:none'>
+ <thead>
+  <tr style='page-break-inside:avoid'>
+   <td width="18%" valign=top style='width:18.14%;border:solid black 1.0pt;
+   background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=TableHeading><a name="ColumnTitle_01"></a>Date</p>
+   </td>
+   <td width="11%" valign=top style='width:11.34%;border:solid black 1.0pt;
+   border-left:none;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=TableHeading>Version</p>
+   </td>
+   <td width="46%" valign=top style='width:46.1%;border:solid black 1.0pt;
+   border-left:none;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=TableHeading>Description</p>
+   </td>
+   <td width="24%" valign=top style='width:24.42%;border:solid black 1.0pt;
+   border-left:none;background:#F2F2F2;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=TableHeading>Author</p>
+   </td>
+  </tr>
+ </thead>
+ <tr style='page-break-inside:avoid'>
+  <td width="18%" valign=top style='width:18.14%;border:solid black 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText>08/03/2016</p>
+  </td>
+  <td width="11%" valign=top style='width:11.34%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText>1.0</p>
+  </td>
+  <td width="46%" valign=top style='width:46.1%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText>Initial release of VA FileMan 22.2 Installation, Back-Out,
+  and Rollback Guide.</p>
+  <p class=TableText>Based on the ProPath Installation, Back-Out, and Rollback
+  Guide template; released February 2016; Version 2.1.</p>
+  </td>
+  <td width="24%" valign=top style='width:24.42%;border-top:none;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText>VA FileMan 22.2 Development Team</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><a name="_Toc446123253">&nbsp;</a></p>
+
+<b><span style='font-size:14.0pt;font-family:"Arial",sans-serif;color:black'><br
+clear=all style='page-break-before:always'>
+</span></b>
+
+<p class=Title2>Table of Contents</p>
+
+<p class=MsoToc1><a
+href="#_Toc458001705">1<span style='font-size:11.0pt;font-family:"Calibri",sans-serif;
+color:windowtext;font-weight:normal;text-decoration:none'>      </span>Introduction<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001706">1.1<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>MUMPS OPERATING SYSTEM File Considerations<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc458001707">2<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Pre-installation and System Requirements<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001708">2.1<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Back Up System<span style='color:black;
+display:none;text-decoration:none'>.. </span><span
+style='color:black;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001709">2.2<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Platform Installation and Preparation<span
+style='color:black;display:none;text-decoration:none'>.. </span><span
+style='color:black;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001710">2.3<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Download and Extract Files<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc458001711">2.3.1<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;text-decoration:none'>      </span>Software<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc458001712">2.3.2<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;text-decoration:none'>      </span>Documentation<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001713">2.4<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Installation Scripts<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001714">2.5<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Cron Scripts<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001715">2.6<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Access Requirements and Skills Needed for
+the Installation<span style='color:black;display:none;text-decoration:none'>.. </span><span
+style='color:black;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc458001716">3<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Installation Procedure<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001717">3.1<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Log onto the System<span style='color:black;
+display:none;text-decoration:none'>... </span><span
+style='color:black;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001718">3.2<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Check the Current VA FileMan Version<span
+style='color:black;display:none;text-decoration:none'>.. </span><span
+style='color:black;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001719">3.3<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Production Environment: Shut Down System<span
+style='color:black;display:none;text-decoration:none'>.. </span><span
+style='color:black;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001720">3.4<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Production Environment: Restart System<span
+style='color:black;display:none;text-decoration:none'>... </span><span
+style='color:black;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001721">3.5<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Production Environment: Inhibit Logons for
+Each Volume Set<span style='color:black;display:none;text-decoration:none'> </span><span
+style='color:black;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001722">3.6<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Environment Check<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001723">3.7<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Production Environment: Load the VA FileMan
+22.2 Distribution<span style='color:black;display:none;text-decoration:none'>.. </span><span
+style='color:black;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001724">3.8<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Install the VA FileMan 22.2 Package<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001725">3.9<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Post-Install TaskMan Procedures<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001726">3.10<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>    </span>Production Environment: Enable Logons<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc458001727">4<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Implementation Procedure<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001728">4.1<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Database Tuning<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001729">4.2<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Verify Installation<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc458001730">5<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Back-Out Plan<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001731">5.1<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Back-Out Strategy<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001732">5.2<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Back-Out Considerations<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc458001733">5.2.1<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;text-decoration:none'>      </span>Load
+Testing<span style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc3><a href="#_Toc458001734">5.2.2<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;text-decoration:none'>      </span>User
+Acceptance Testing<span style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001735">5.3<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Back-Out Criteria<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001736">5.4<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Back-Out Risks<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001737">5.5<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Authority for Back-Out<span
+style='color:black;display:none;text-decoration:none'> </span><span
+style='color:black;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001738">5.6<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Back-Out Procedure<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc458001739">6<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Rollback Plan<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001740">6.1<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Rollback Considerations<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001741">6.2<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Rollback Criteria<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001742">6.3<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Rollback Risks<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001743">6.4<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Authority for Rollback<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc2><a href="#_Toc458001744">6.5<span style='font-size:11.0pt;
+font-family:"Calibri",sans-serif;color:windowtext;font-weight:normal;
+text-decoration:none'>      </span>Rollback Procedure<span style='color:black;
+display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<p class=Title2>List of Figures</p>
+
+<p class=MsoTof><a href="#_Toc458001745">Figure 1: Check the Current VA FileMan
+Version<span style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoTof><a href="#_Toc458001746">Figure 2: Inhibit Logons for Each
+Volume Set<span style='color:black;display:none;text-decoration:none'> </span><span
+style='color:black;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoTof><a href="#_Toc458001747">Figure 3: load the VA FileMan 22.2
+distribution file<span style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoTof><a href="#_Toc458001748">Figure 4: Sample installation dialogue<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoTof><a href="#_Toc458001749">Figure 5: Enable Logons<span
+style='color:black;display:none;text-decoration:none'> </span><span
+style='color:black;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<p class=Title2>List of Tables</p>
+
+<p class=MsoTof><a href="#_Toc458001750">Table 1: VA FileMan 22.2 Documentation<span
+style='color:black;display:none;text-decoration:none'>. </span><span
+style='color:black;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+</div>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'><br
+clear=all style='page-break-before:right'>
+</span>
+
+<div class=WordSection3>
+
+<h1><a name="_Toc458001705">1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Introduction</a></h1>
+
+<p class=MsoBodyText>This guide provides instructions for installing Department
+of Veterans Affairs (VA) FileMan 22.2. VA FileMan is designed to be used either
+with the Kernel or as a standalone application; however, these installation
+instructions are provided only for sites running Kernel 8.0. Since Kernel is
+dependent on VA FileMan 22.0, that version of VA FileMan is already installed
+on your system.</p>
+
+<p class=MsoBodyText>This guide is written specifically for the Caché Operating
+System (OS). It does not contain OS-specific instructions for other OSs, such
+as routing mapping and manually moving %routines into the Manager account.</p>
+
+<p class=Note><img width=24 height=24
+src="installation-rollback.fld/image002.png"
+alt="Title: Note - Description: Note">    <b>REF:</b> For identifying other OSs
+to VA FileMan and Kernel, see Section <u><span
+style='color:blue'>1.1</span></u>.</p>
+
+<p class=MsoBodyText>This installation is significantly different from previous
+versions. You no longer must manually move the new VA FileMan routines into the
+account. The routines are present in the Kernel Installation &amp; Distribution
+System (KIDS) build and are loaded as part of the install. DINIT is run <i>non</i>-interactively
+during the KIDS pre-install to update the VA FileMan files.</p>
+
+<p class=MsoBodyText>After this installation, the current version of the VA FileMan
+files will be installed and updated with data as appropriate.</p>
+
+<p class=Caution><img width=33 height=33 id="Picture 92"
+src="installation-rollback.fld/image003.png"
+alt="Title: Caution - Description: Caution">    CAUTION: Do <i>not</i> run
+DINIT to update the VA FileMan files after the install is complete. Running
+DINIT from the Command line at any time will cause data corruption.</p>
+
+<h2><a name="_Ref457899521"></a><a name="_Toc458001706">1.1<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>MUMPS
+OPERATING SYSTEM File Considerations</a></h2>
+
+<p class=MsoBodyText style='page-break-after:avoid'>This Install, Back-Out, and
+Rollback Guide assumes an install on Caché. You are not asked to identify your
+OS during the install.</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'>VA FileMan 22.2 populates
+the MUMPS OPERATING SYSTEM file (#.7) with values for the following operating
+systems:</p>
+
+<p class=BodyTextBullet1 style='page-break-after:avoid'><span style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>CACHE/OpenM</p>
+
+<p class=BodyTextBullet1 style='page-break-after:avoid'><span style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>DSM for OpenVMS</p>
+
+<p class=BodyTextBullet1 style='page-break-after:avoid'><span style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>DTM-PC</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>GT.M(UNIX)</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>GT.M(VAX)</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>MSM</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>OTHER—This
+placeholder is for a user defined OS</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'>In order to notify VA FileMan
+that you are using an OS other than Cache after the install completes enter the
+following command to identify your OS:</p>
+
+<p class=CodeExample>&gt;<b>D OS^DINIT</b></p>
+
+<p class=BodyText6>&nbsp;</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'>In order to complete the
+identification to Kernel that you are running an OS other than Cache, run the
+appropriate routine from the following list:</p>
+
+<p class=CodeExample>ZOSFGTM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+GTM on VMS</p>
+
+<p class=CodeExample>ZOSFGUX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+GTM on Unix</p>
+
+<p class=CodeExample>ZOSFONT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache</p>
+
+<p class=CodeExample>ZOSFVXD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DSM
+on VMS</p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+</div>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection4>
+
+<h1 style='margin-left:27.35pt;text-indent:-27.35pt'><a name="_Toc457395486"></a><a
+name="_Toc458001707">2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Pre-installation and System Requirements</a></h1>
+
+<h2><a name="_Toc442962347"></a><a name="_Toc447537758"></a><a
+name="_Ref457915305"></a><a name="_Toc458001708">2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Back Up System</a></h2>
+
+<p class=MsoBodyText><a name="_Ref436642459"></a><a name="_Toc442962348">Back
+up your system as a safeguard <i>before</i> the installation. In order to back
+out the VA FileMan 22.2 installation, restore your back up (see the “</a><u><span style='color:blue'>Back-Out Plan</span></u>” section).</p>
+
+<h2><a name="_Toc442962346"></a><a name="_Toc458001709">2.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Platform
+Installation and Preparation</a></h2>
+
+<p class=MsoBodyText style='page-break-after:avoid'>VA FileMan 22.2 requires pre-existing
+Kernel 8.0 software.</p>
+
+<p class=MsoBodyText><a name="_Toc442962349">Patches DI*22.2*1 <i>and</i>
+HL7*1.6*167 resolve a known VA FileMan (FM) 22.2 issue, SDM I9259370. User
+cannot select HL7 messages directly from the list in the HL View Transmission
+Log option. For ease of installation, sites may delay installing FM 22.2 until
+release of patches DI*22.2*1 and HL7*1.6*167; both patches will be released
+shortly. Although the two patches can be installed while users are on the
+system, installing both patches right after installing FM 22.2, before allowing
+users back on the system, is more efficient and will eliminate any possible
+errors.</a></p>
+
+<h2><a name="_Toc458001710">2.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Download and Extract Files</a></h2>
+
+<p class=MsoBodyText>Software being released as a Kernel Installation and
+Distribution System (KIDS) file and documentation describing the new
+functionality introduced by this patch is available.</p>
+
+<h3><a name="_Toc458001711">2.3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Software</a></h3>
+
+<p class=MsoBodyText style='page-break-after:avoid'>Software can be downloaded
+from the Product Support (PS) Anonymous Directories via
+Secure File Transfer Protocol (SFTP).</p>
+
+<p class=MsoBodyText>Download the VA_FILEMAN_22_2.KID file from the appropriate
+server to a directory on your system.</p>
+
+<h3><a name="_Toc458001712">2.3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Documentation</a></h3>
+
+<p class=MsoBodyText style='page-break-after:avoid'>Documentation can be
+downloaded from the Product Support (PS) Anonymous Directories via
+Secure File Transfer Protocol (SFTP).</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'>Documentation can also be
+found on the VA Software Document Library (VDL) at: <a
+href="http://www.va.gov/vdl/application.asp?appid=5"
+title="A Software Document Library (VDL): VA FileMan Documentation">http://www.va.gov/vdl/application.asp?appid=5</a>
+</p>
+
+<p class=MsoCaption><a name="_Toc457395538"></a><a name="_Toc458001750">Table </a>1:
+VA FileMan 22.2 Documentation</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ title="VSM Documentation" summary="VSM Documentation" style='margin-left:.1in;
+ border-collapse:collapse;border:none'>
+ <thead>
+  <tr>
+   <td width=172 valign=top style='width:128.7pt;border:solid windowtext 1.0pt;
+   background:#DFDFDF;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=TableHeading><a name="COL001_TBL003"></a>File Name</p>
+   </td>
+   <td width=114 valign=top style='width:85.5pt;border:solid windowtext 1.0pt;
+   border-left:none;background:#DFDFDF;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=TableHeading>FTP Mode</p>
+   </td>
+   <td width=343 valign=top style='width:257.4pt;border:solid windowtext 1.0pt;
+   border-left:none;background:#DFDFDF;padding:0in 5.4pt 0in 5.4pt'>
+   <p class=TableHeading>Description</p>
+   </td>
+  </tr>
+ </thead>
+ <tr>
+  <td width=172 valign=top style='width:128.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>fm22_2um1.pdf</p>
+  </td>
+  <td width=114 valign=top style='width:85.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>Binary</p>
+  </td>
+  <td width=343 valign=top style='width:257.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>VA FileMan 22.2 User Manual</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=172 valign=top style='width:128.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>fm22_2um2.pdf</p>
+  </td>
+  <td width=114 valign=top style='width:85.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>Binary</p>
+  </td>
+  <td width=343 valign=top style='width:257.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>VA FileMan 22.2 Advanced
+  User Manual</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=172 valign=top style='width:128.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>fm22_2dg.pdf</p>
+  </td>
+  <td width=114 valign=top style='width:85.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>Binary</p>
+  </td>
+  <td width=343 valign=top style='width:257.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>VA FileMan 22.2 Developer’s
+  Guide</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=172 valign=top style='width:128.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>fm22_2ig.pdf</p>
+  </td>
+  <td width=114 valign=top style='width:85.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>Binary</p>
+  </td>
+  <td width=343 valign=top style='width:257.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText style='page-break-after:avoid'>VA FileMan 22.2 Installation,
+  Back-Out, and Rollback Guide</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=172 valign=top style='width:128.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText>fm22_2tm.pdf</p>
+  </td>
+  <td width=114 valign=top style='width:85.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText>Binary</p>
+  </td>
+  <td width=343 valign=top style='width:257.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText>VA FileMan 22.2 Technical Manual</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=172 valign=top style='width:128.7pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText>fm22_2rn.pdf</p>
+  </td>
+  <td width=114 valign=top style='width:85.5pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText>Binary</p>
+  </td>
+  <td width=343 valign=top style='width:257.4pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=TableText>VA FileMan 22.2 Release Notes</p>
+  </td>
+ </tr>
+</table>
+
+<p class=BodyText6>&nbsp;</p>
+
+<h2><a name="_Toc458001713">2.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Installation Scripts</a></h2>
+
+<p class=MsoBodyText><a name="_Toc442962350">There are no installation scripts for
+VA FileMan 22.2.</a></p>
+
+<h2><a name="_Toc458001714">2.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Cron Scripts</a></h2>
+
+<p class=MsoBodyText><a name="_Toc442962351">There are no cron scripts for the
+VA FileMan 22.2.</a></p>
+
+<h2><a name="_Toc458001715">2.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Access Requirements and Skills Needed for the Installation</a></h2>
+
+<p class=MsoBodyText style='page-break-after:avoid'>Only those with system
+management knowledge and access should install VA FileMan 22.2.</p>
+
+<p class=Note style='page-break-after:avoid'><img border=0 width=24 height=24
+id="Picture 1" src="installation-rollback.fld/image002.png"
+alt="Title: Note - Description: Note">    <b>REF:</b> For instructions on
+performing OS-level tasks, see your OS system management documentation.</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'>The installer needs to know
+how to do the following:</p>
+
+<p class=BodyTextBullet1 style='page-break-after:avoid'><span style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Obtain Veterans Health Information Systems and Technology
+Architecture (VistA) software from FORUM and Secure File Transfer Protocol
+(SFTP) download sites (i.e.,&nbsp;Product Support Anonymous Directories).</p>
+
+<p class=BodyTextBullet1 style='page-break-after:avoid'><span style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Run a Kernel Installation and Distribution System (KIDS)
+installation.</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Logging
+onto the system and getting to the M prompt (Programmer Mode).</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Execute
+commands in Programmer mode when given VistA Programmer Access.</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Running
+system status reports.</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Terminating
+processes.</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Accessing
+host files (i.e.,&nbsp;KIDS build file).</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Inhibiting
+Logons.</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Stopping
+TaskMan.</p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+</div>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection5>
+
+<h1><a name="_Toc416250739"></a><a name="_Toc430174019"></a><a
+name="_Toc442962352"></a><a name="_Toc458001716">3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Installation Procedure</a></h1>
+
+<h2><a name="_Toc458001717">3.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Log onto the System</a></h2>
+
+<p class=MsoBodyText>Log onto the Production account.</p>
+
+<h2><a name="_Toc458001718">3.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Check the Current VA FileMan Version</a></h2>
+
+<p class=MsoBodyText>Check that current version in the PACKAGE FILE (#9.4) is
+set to <b>22.0</b>.</p>
+
+<p class=MsoCaption><a name="_Toc458001745">Figure </a>1: Check the Current VA
+FileMan Version</p>
+
+<div style='border:solid windowtext 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+margin-left:9.0pt;margin-right:9.35pt'>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&gt;<b><span
+style='background:yellow'>D P^DI</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>VA FileMan 22.2</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Select OPTION: <b><span
+style='background:yellow'>1 &lt;Enter&gt;</span></b> ENTER OR EDIT FILE ENTRIES</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Input to what File:
+DEVICE// <b><span style='background:yellow'>PACKAGE</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1  
+PACKAGE                          (294 entries)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  2   PACKAGE
+INTERFACE                (128 entries)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  3   PACKAGE
+SIZE                     (5182 entries)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  4   PACKAGE TYPE                     (529
+entries)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>CHOOSE 1-4: <b><span
+style='background:yellow'>1 &lt;Enter&gt;</span></b> 
+PACKAGE                    (294 entries)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>EDIT WHICH FIELD:
+ALL// <b><span style='background:yellow'>CURRENT VERSION</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>THEN EDIT FIELD: <b><span
+style='background:yellow'>&lt;Enter&gt;</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Select PACKAGE NAME:
+<b><span style='background:yellow'>VA FILEMAN &lt;Enter&gt;</span></b>       DI</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>CURRENT VERSION:
+22.2// <b><span style='background:yellow'>22.0</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Select PACKAGE NAME:</p>
+
+</div>
+
+<p class=BodyText6>&nbsp;</p>
+
+<h2><a name="_Toc458001719">3.3<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Production Environment: Shut Down System</a></h2>
+
+<p class=MsoBodyText>In Production, shut down Caché/system using your regular
+shutdown procedures.</p>
+
+<h2><a name="_Toc458001720">3.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Production Environment: Restart System</a></h2>
+
+<p class=MsoBodyText>In Production, restart Caché/system using your regular startup
+procedures.</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Do
+not restart TaskMan or any background filers.</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>Do
+not allow any users back on the system.</p>
+
+<h2><a name="_Toc458001721">3.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Production Environment: Inhibit Logons for Each Volume Set</a></h2>
+
+<p class=MsoBodyText>You can use the operating system (OS) command to prevent
+logons. Using the OS command does not cause a problem and allows you to work
+within the menu system as needed during the installation. Caché/OpenM sites can
+stop the LAT and TELNET services.</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'>Use VA FileMan to edit the
+VOLUME SET file (#14.5).</p>
+
+<p class=MsoCaption><a name="_Toc458001746">Figure </a>2: Inhibit Logons for
+Each Volume Set</p>
+
+<div style='border:solid windowtext 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+margin-left:9.0pt;margin-right:9.35pt'>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&gt;<b><span
+style='background:yellow'>D Q^DI</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>VA FileMan 22.0</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Select OPTION: <b><span
+style='background:yellow'>ENTER OR EDIT FILE ENTRIES</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>INPUT TO WHAT FILE: 
+VOLUME SET// <b><span style='background:yellow'>14.5</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>EDIT WHICH FIELD: 
+ALL// <b><span style='background:yellow'>INHIBIT LOGONS ?</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>THEN EDIT FIELD: <b><span
+style='background:yellow'>&lt;Enter&gt;</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'><img border=0
+width=327 height=41 src="installation-rollback.fld/image004.png"
+alt="Replace &lt;Production Account&gt; with your active Volume Set. - Title: Callout Text - Description: Replace &lt;Production Account&gt; with your active Volume Set."></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Select VOLUME SET: <b><i><span
+style='background:yellow'>&lt;Production Account&gt;</span></i></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>INHIBIT LOGONS?: 
+NO// <b><span style='background:yellow'>YES</span></b></p>
+
+</div>
+
+<p class=BodyText6>&nbsp;</p>
+
+<h2><a name="_Toc458001722">3.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Environment Check</a></h2>
+
+<p class=MsoBodyText>The VA FileMan 22.2 distribution includes an Environment
+Check routine (DI222ENV). It is run automatically during the Install. Also, you
+are asked if you want to run it during the Load of the distribution. Answer “<b>YES.</b>”</p>
+
+<p class=MsoBodyText>The Environment Check examines the status of your system
+to verify that TaskMan is stopped and that Logons are inhibited (see steps
+above). If the install is stopped because your system is not in the proper
+state, stop TaskMan and inhibit Logons. Then proceed with the install.</p>
+
+<p class=MsoBodyText>The Environment Check also validates the integrity of File
+#1 (the File of Files) on your system. If a zero node for an entry in File #1
+is missing, you are notified of the offending entry and the install is stopped.
+The problem <i>must</i> be resolved before proceeding with the install.</p>
+
+<h2><a name="_Toc458001723">3.7<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Production Environment: Load the VA FileMan 22.2 Distribution</a></h2>
+
+<p class=MsoBodyText style='page-break-after:avoid'>You are now ready to Load
+the Kernel Installation and Distribution System (KIDS) build and Install VA
+FileMan 22.2.</p>
+
+<p class=BodyTextNumbered1 style='page-break-after:avoid'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>Use the
+^XUP and Q^DI entry points to set your DUZ and set DUZ(0) to &quot;<b>@</b>&quot;.</p>
+
+<p class=BodyTextLettered1 style='page-break-after:avoid'>a.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span>To set DUZ
+when responding to the Access code prompt. Press <b>Enter</b> at the OPTION
+prompt.</p>
+
+<p class=CodeExampleIndent3>&gt;<b>D ^XUP</b></p>
+
+<p class=BodyTextLettered1 style='page-break-after:avoid'><span
+style='font-size:12.0pt'>b.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:12.0pt'>To set DUZ(0)=&quot;<b>@</b>&quot;</span></p>
+
+<p class=CodeExampleIndent3>&gt;<b>D Q^DI</b></p>
+
+<p class=BodyText6>&nbsp;</p>
+
+<p class=BodyTextNumbered1 style='page-break-after:avoid'><b>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp; </span></b><b><u>IMPORTANT:</u>
+</b>Invoke the <b>^XPDKRN</b> menu and select the LOAD A DISTRIBUTION option.
+Enter the appropriate Host file name to load the VA FileMan 22.2 distribution
+file (FM22_0.KID).</p>
+
+<p class=MsoCaption><a name="_Toc458001747">Figure </a>3: load the VA FileMan 22.2
+distribution file</p>
+
+<div style='border:solid windowtext 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+margin-left:9.0pt;margin-right:9.35pt'>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&gt;<b><span
+style='background:yellow'>D ^XPDKRN</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>KIDS 8.0</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Select KIDS OPTION: <b><span
+style='background:yellow'>1 &lt;Enter&gt;</span></b> LOAD A DISTRIBUTION</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Enter a Host File: <b><span
+style='background:yellow'>/nfsftp/FLM22/sqakids/VA_FILEMAN_22_2.KID</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>KIDS Distribution
+saved on Mar 18, 2016@16:57:48</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Comment: VA FileMan
+22.2 KIDS Build</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>This Distribution
+contains Transport Globals for the following Package(s):</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;&nbsp; VA
+FILEMAN 22.2</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Distribution OK!</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Want to Continue
+with Load? YES// <b><span style='background:yellow'>&lt;Enter&gt;</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Loading
+Distribution...</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Build VA FILEMAN
+22.2 has an Environmental Check Routine</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Want to RUN the
+Environment Check Routine? YES// <b><span style='background:yellow'>&lt;Enter&gt;</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   VA FILEMAN 22.2</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Will first run the
+Environment Check Routine, DI222ENV</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Use INSTALL NAME: VA
+FILEMAN 22.2 to install this Distribution.</p>
+
+</div>
+
+<p class=BodyText6>&nbsp;</p>
+
+<h2><a name="_Toc458001724"></a><a name="_Hlt446754849"></a>3.8<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Install
+the VA FileMan 22.2 Package</h2>
+
+<p class=MsoBodyText style='page-break-after:avoid'>Invoke the ^XPDKRN menu
+again and select the INSTALL PACKAGE(S) option. Select VA FILEMAN 22.2 as the
+package you want to install.</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'>The VA FileMan 22.2 installation
+takes approximately 10 minutes.</p>
+
+<p class=MsoCaption><a name="_Toc458001748">Figure </a>4: Sample installation
+dialogue</p>
+
+<div style='border:solid windowtext 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+margin-left:9.0pt;margin-right:9.35pt'>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&gt;<b><span
+style='background:yellow'>D ^XPDKRN</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>KIDS 8.0</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Select KIDS OPTION: <b><span
+style='background:yellow'>6 &lt;Enter&gt;</span></b> INSTALL PACKAGE(S)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Select INSTALL NAME:
+<b><span style='background:yellow'>VA FILEMAN 22.2 &lt;Enter&gt;</span></b> 2/18/16@11:51:17</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>     =&gt; VA
+FileMan 22.2 KIDS build ;Created on Feb 18, 2016@11:34</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>This Distribution
+was loaded on Feb 18, 2016@11:51:17 with header of </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   VA FileMan 22.2  KIDS
+build  ;Created on Feb 18, 2016@11:34</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   It consisted of
+the following Install(s):</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>VA FILEMAN 22.2</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Checking Install for
+Package VA FILEMAN 22.2</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Will first run the
+Environment Check Routine, DI222ENV</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Install Questions
+for VA FILEMAN 22.2</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Incoming Files:</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .85      
+LANGUAGE  (including data)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Note:  You already
+have the 'LANGUAGE' File.</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>I will OVERWRITE
+your data with mine.</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .9        META
+DATA DICTIONARY</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Note:  You already
+have the 'META DATA DICTIONARY' File.</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Want KIDS to Rebuild
+Menu Trees Upon Completion of Install? YES// <b><span style='background:yellow'>&lt;Enter&gt;</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Want KIDS to INHIBIT
+LOGONs during the install? NO<b>// <span style='background:yellow'>&lt;Enter&gt;</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Want to DISABLE
+Scheduled Options, Menu Options, and Protocols? NO// <b><span style='background:
+yellow'>&lt;Enter&gt;</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Enter the Device you
+want to print the Install messages.</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Enter a '^' to abort
+the install.</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>DEVICE: HOME// <b><span
+style='background:yellow'>&lt;Enter&gt;</span></b> TELNET</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Install Started for
+VA FILEMAN 22.2 : </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>               Feb
+18, 2016@11:51:32</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Build Distribution
+Date: Feb 18, 2016</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Installing
+Routines:</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>               Feb
+18, 2016@11:51:33</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Running Pre-Install
+Routine: EN^DI222PRE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Initializing FileMan
+version 22.2...</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>......................................</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Now loading DIALOG
+and LANGUAGE Files...........................................</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>................................................................................</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>................................................................................</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>................................................................................</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>.........................................</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>..........</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>The following files
+have been installed:</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .11     INDEX</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .2     
+DESTINATION</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .31     KEY</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .4      PRINT
+TEMPLATE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .401    SORT
+TEMPLATE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .402    INPUT
+TEMPLATE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .403    FORM</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .404    BLOCK</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .44     FOREIGN
+FORMAT</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .46     IMPORT
+TEMPLATE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .5      FUNCTION</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .6      DD AUDIT</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .7      MUMPS
+OPERATING SYSTEM</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .81     DATA TYPE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .83     COMPILED
+ROUTINE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .84     DIALOG</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .85     LANGUAGE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   .9      META DATA
+DICTIONARY</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1        FILE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.1      AUDIT</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.11     ARCHIVAL
+ACTIVITY</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.12     FILEGRAM
+HISTORY</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.13     FILEGRAM
+ERROR LOG</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.2      ALTERNATE
+EDITOR</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.521   
+SQLI_SCHEMA</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.52101 
+SQLI_KEY_WORD</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.5211  
+SQLI_DATA_TYPE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.5212  
+SQLI_DOMAIN</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.5213  
+SQLI_KEY_FORMAT</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.5214  
+SQLI_OUTPUT_FORMAT</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.5215  
+SQLI_TABLE</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.5216  
+SQLI_TABLE_ELEMENT</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.5217  
+SQLI_COLUMN</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.5218  
+SQLI_PRIMARY_KEY</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.5219  
+SQLI_FOREIGN_KEY</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.52191 
+SQLI_ERROR_TEXT</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  1.52192 
+SQLI_ERROR_LOG</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Re-indexing entries
+in the DIALOG file..........................</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Compiling all forms
+...</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  
+DICATT                          (#.001)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DIPTED                          (#.1001)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DIKC
+EDIT                       (#.1101)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DIKC EDIT
+UI                    (#.1102)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DIKK
+EDIT                       (#.3101)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  
+DIBTED                          (#.40001)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>  
+DIETED                          (#.40101)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DIEDIT                         
+(#.40201)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF BLOCK
+EDIT                 (#.40301)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF PAGE
+ADD                   (#.40302)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF PAGE
+EDIT                  (#.40303)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF PAGE
+SELECT                (#.40304)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF FORM
+EDIT                  (#.40305)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF HEADER BLOCK
+EDIT          (#.40306)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF FIELD
+ADD                  (#.40401)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF FIELD
+CAPTION ONLY         (#.40402)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF FIELD
+DD                   (#.40403)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF FIELD FORM
+ONLY            (#.40404)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF FIELD
+COMPUTED             (#.40405)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF BLOCK
+ADD                  (#.40406)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF BLOCK
+DELETE               (#.40407)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDGF HEADER BLOCK
+SELECT        (#.40408)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDXP FF
+FORM1                   (#.441)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   DDMP SPECIFY IMPORT            
+(#.461)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   XUEDIT
+CHARACTERISTICS          (#1)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>   XUEXISTING
+USER                 (#2)</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>                    .</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>                    .</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>                    .</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>INITIALIZATION
+COMPLETED IN 3 SECONDS.</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Initialization of
+FileMan version 22.2 has been completed.</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Installing Data
+Dictionaries: </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>               Feb
+18, 2016@11:51:36</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Installing Data: </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>               Feb
+18, 2016@11:51:36</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Installing PACKAGE
+COMPONENTS: </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Installing SECURITY
+KEY  ....</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Installing REMOTE
+PROCEDURE   .............</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Installing OPTION  
+................................</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>               Feb
+18, 2016@11:51:37</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Running
+Post-Install Routine: POST^DI222POS</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Saving Routine:
+DIDT, As: %DT</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Saving Routine:
+DIDTC, As: %DTC</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Saving Routine:
+DIRCR, As: %RCR</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Routine:     DIDT
+Loaded, Saved as      %DT</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Routine:    DIDTC
+Loaded, Saved as     %DTC</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Routine:    DIRCR
+Loaded, Saved as     %RCR</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>DIDT
+;SFISC/GFT-DATE/TIME UTILITY ;2014-12-26  12:32 PM</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> ;;22.2;VA
+FileMan;;Jan 05, 2016;Build 32</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>DIDTC
+;SFISC/XAK-DATE/TIME OPERATIONS ;3JAN2011</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> ;;22.2;VA
+FileMan;;Jan 05, 2016;Build 32</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>DIRCR
+;SFISC/GFT-DELETE THIS LINE AND SAVE AS '%RCR'*** ;13DEC2012</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> ;;22.2;VA
+FileMan;;Jan 05, 2016;Build 32</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Updating Routine
+file...</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Updating KIDS
+files...</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> VA FILEMAN 22.2
+Installed. </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>               Feb
+18, 2016@11:51:38</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Not a production
+UCI</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> NO Install Message
+sent </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> </p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'> Call MENU rebuild</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Starting Menu
+Rebuild:  Feb 18, 2016@11:51:40</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Collecting primary
+menus in the New Person file...</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>                    Primary
+menus found in the New Person file</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>                   
+------------------------------------------</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>OPTION NAME        
+MENU TEXT                    # OF         LAST     LAST</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>                                                
+USERS        USED     BUILT</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>                                         .</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>                                         .</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>                                         .</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Building secondary
+menu trees....</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Merging.... done.</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Install Completed</p>
+
+</div>
+
+<p class=BodyText6>&nbsp;</p>
+
+<h2><a name="_Toc458001725">3.9<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Post-Install TaskMan Procedures</a><a name="_Hlt446807834"></a></h2>
+
+<p class=MsoBodyText style='page-break-after:avoid'>TaskMan should have started
+when you rebooted or restarted the system. If TaskMan is not running, start
+TaskMan.</p>
+
+<p class=CodeExample>&gt;<b>D ^ZTMB</b></p>
+
+<h2><a name="_Toc458001726">3.10<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
+</span>Production Environment: Enable Logons</a></h2>
+
+<p class=MsoBodyText>Use VA FileMan to edit the Inhibit Logon field in the
+VOLUME SET file (#14.5) for each volume set. This allows TaskMan to start
+tasks.</p>
+
+<p class=MsoCaption><a name="_Toc458001749">Figure </a>5: Enable Logons</p>
+
+<div style='border:solid windowtext 1.0pt;padding:5.0pt 5.0pt 5.0pt 5.0pt;
+margin-left:9.0pt;margin-right:9.35pt'>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&gt;<b><span
+style='background:yellow'>D Q^DI</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>VA FileMan 22.2</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Select OPTION: <b><span
+style='background:yellow'>ENTER OR EDIT FILE ENTRIES</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>INPUT TO WHAT FILE: <b><span
+style='background:yellow'>VOLUME SET</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>EDIT WHICH FIELD: 
+ALL// <b><span style='background:yellow'>INHIBIT LOGONS ?</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>THEN EDIT FIELD: <b><span
+style='background:yellow'>&lt;Enter&gt;</span></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'><img border=0
+width=327 height=41 src="installation-rollback.fld/image004.png"
+alt="Replace &lt;Production Account&gt; with your active Volume Set. - Title: Callout Text - Description: Replace &lt;Production Account&gt; with your active Volume Set."></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>Select VOLUME SET: <b><i><span
+style='background:yellow'>&lt;Production Account&gt;</span></i></b></p>
+
+<p class=Dialogue style='margin:0in;margin-bottom:.0001pt'>INHIBIT LOGONS?: 
+YES// <b><span style='background:yellow'>NO</span></b></p>
+
+</div>
+
+<p class=BodyText6>&nbsp;</p>
+
+<p class=MsoNormal><b>**** You have now completed the installation of VA
+FileMan. ****<a name="_Toc457395513"></a><a name="_Ref457395705"></a></b></p>
+
+</div>
+
+<span style='font-size:12.0pt;font-family:"Times New Roman",serif;color:black'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<div class=WordSection6>
+
+<h1 style='margin-left:27.35pt;text-indent:-27.35pt'><a name="_Ref457905669"></a><a
+name="_Toc457395510"></a><a name="_Toc458001727">4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Implementation Procedure</a></h1>
+
+<h2><a name="_Toc436046656"></a><a name="_Toc457395511"></a><a
+name="_Toc458001728">4.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Database Tuning</a></h2>
+
+<p class=MsoBodyText>There are no special database tuning requirements for VA
+FileMan 22.2.</p>
+
+<h2><a name="_Toc457395512"></a><a name="_Toc458001729">4.2<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Verify
+Installation</a></h2>
+
+<p class=MsoBodyText>Verify the installation. Use KIDS option Install File
+Print, under the Utilities menu, and enter VA FILEMAN 22.2.&nbsp; Confirm that
+the STATUS field is “Install Complete”.</p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<h1 style='margin-left:27.35pt;text-indent:-27.35pt'><a name="_Ref457918848"></a><a
+name="_Toc458001730">5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Back-Out Plan</a></h1>
+
+<p class=MsoBodyText style='page-break-after:avoid'>Back-out pertains to a
+return to the last known good operational state of the software and appropriate
+platform settings.</p>
+
+<p class=MsoBodyText>The method of backing out the VA FileMan (FM) 22.2 patch
+is to restore from the backup that was taken in the “<u><span style='color:blue'>Back Up System</span></u>” section. Due to the fact that FM 22.2 is a
+change to the system infrastructure, this is the only way to put the system
+back to the pre FM 22.2 state.</p>
+
+<h2><a name="_Toc436046660"></a><a name="_Toc457395514"></a><a
+name="_Toc458001731">5.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Back-Out Strategy</a></h2>
+
+<p class=MsoBodyText>The need for a back-out would be determined by all
+affected organizations. This would primarily include representatives from
+Veterans Health Administration (VHA) and Enterprise Program Management (EPMO).
+In the case of the initial release a back-out would include removal of data,
+files and routines. In the case of future patches and releases the back-out
+strategy would be dependent on the contents of the released functionality and
+could include restoration of file definitions, routines or data.</p>
+
+<h2><a name="_Toc436046661"></a><a name="_Toc457395515"></a><a
+name="_Toc458001732">5.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Back-Out Considerations</a></h2>
+
+<p class=MsoBodyText><span class=BodyText2Char><span style='font-size:11.0pt'>Back-out
+considerations would include impact on production VistA end-users and impact on
+Wide Area</span></span> Network.</p>
+
+<h3 style='margin-left:45.35pt;text-indent:-45.35pt'><a name="_Toc436046662"></a><a
+name="_Toc457395516"></a><a name="_Toc458001733">5.2.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Load Testing</a></h3>
+
+<p class=MsoBodyText>Not applicable for FM 22.2.</p>
+
+<h3 style='margin-left:45.35pt;text-indent:-45.35pt'><a name="_Toc436046663"></a><a
+name="_Toc457395517"></a><a name="_Toc458001734">5.2.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>User Acceptance Testing</a></h3>
+
+<p class=MsoBodyText><a name="_Toc436046664">FM 22.2 User Acceptance Testing
+(UAT) is performed during VistA patch testing at test sites.</a></p>
+
+<h2><a name="_Toc457395518"></a><a name="_Toc458001735">5.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Back-Out
+Criteria</a></h2>
+
+<p class=MsoBodyText>The FM 22.2 back-out criteria follow existing VistA
+back-out procedures.</p>
+
+<h2><a name="_Toc436046665"></a><a name="_Toc457395519"></a><a
+name="_Toc458001736">5.4<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Back-Out Risks</a></h2>
+
+<p class=MsoBodyText>The FM 22.2 back-out risks are the same risks established
+with existing VistA back-out procedures.</p>
+
+<h2><a name="_Toc436046666"></a><a name="_Toc457395520"></a><a
+name="_Toc458001737">5.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Authority for Back-Out</a></h2>
+
+<p class=MsoBodyText>The authority for the need of back-out would reside with
+VHA and EPMO representatives.</p>
+
+<h2><a name="_Toc436046667"></a><a name="_Toc457395521"></a><a
+name="_Ref457395733"></a><a name="_Toc458001738">5.6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Back-Out Procedure</a></h2>
+
+<p class=MsoBodyText style='page-break-after:avoid'>To back out FM 22.2, do the
+following:</p>
+
+<p class=BodyTextBullet1 style='page-break-after:avoid'><span style='font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Restore backup to reset the system to the pre FM 22.2 state.</p>
+
+<p class=BodyTextBullet1><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span>You
+will lose everything that has happened since the install.</p>
+
+<p class=Caution><img border=0 width=33 height=33 id="Picture 6"
+src="installation-rollback.fld/image003.png"
+alt="Title: Caution - Description: Caution">    CAUTION: Once the system has
+been restarted, the backout procedure is no longer possible.</p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+<h1 style='margin-left:27.35pt;text-indent:-27.35pt'><a name="_Toc457395522"></a><a
+name="_Toc458001739">6<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Rollback Plan</a></h1>
+
+<p class=MsoBodyText style='page-break-after:avoid'>Rollback pertains to data.</p>
+
+<p class=MsoBodyText style='page-break-after:avoid'>VA FileMan (FM) 22.2 does <i>not</i>
+export any data.</p>
+
+<h2><a name="_Toc436046669"></a><a name="_Toc457395523"></a><a
+name="_Toc458001740">6.1<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Rollback Considerations</a></h2>
+
+<p class=MsoBodyText>N/A. FM 22.2 does not export any data.</p>
+
+<h2><a name="_Toc436046670"></a><a name="_Toc457395524"></a><a
+name="_Toc458001741">6.2<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Rollback Criteria</a></h2>
+
+<p class=MsoBodyText><a name="_Toc436046671">N/A. FM 22.2 does not export any
+data.</a></p>
+
+<h2><a name="_Toc457395525"></a><a name="_Toc458001742">6.3<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Rollback
+Risks</a></h2>
+
+<p class=MsoBodyText><a name="_Toc436046672">N/A. FM 22.2 does not export any
+data.</a></p>
+
+<h2><a name="_Toc457395526"></a><a name="_Toc458001743">6.4<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Authority
+for Rollback</a></h2>
+
+<p class=MsoBodyText style='page-break-after:avoid'>Rollback <i>can</i> be
+authorized by system administrators once a problem has been identified. Enterprise
+Program Management Office (EPMO) should be informed immediately via a MailMan
+message sent to:</p>
+
+<p class=MsoBodyText3>REDACTED</p>
+
+<h2><a name="_Toc436046673"></a><a name="_Toc457395527"></a><a
+name="_Toc458001744">6.5<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Rollback Procedure</a></h2>
+
+<p class=MsoBodyText>N/A. FM 22.2 does not export any data.</p>
+
+<p class=MsoBodyText>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,2273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>VA FileMan - FILE MANAGER ACCESS CODE</title>
+	<meta name="generator" content="LibreOffice 7.3.4.2 (MacOSX)"/>
+	<meta name="author" content="Department of Veterans Affairs"/>
+	<meta name="created" content="2021-03-15T16:25:00"/>
+	<meta name="changedby" content="Department of Veterans Affairs"/>
+	<meta name="changed" content="2021-03-15T17:50:00"/>
+	<meta name="classification" content="How to use this document to implement file access security at VistA sites using Kernel or VA FileMan."/>
+	<meta name="keywords" content="VA, FileMan, FileMan, FileMan, Delphi, Components, (FMDC), Home, Page, FDMC, FileMan, Delphi, Components, (FMDC), FileMan, Delphi, Components, FileMan, Delphi, Infrastructure, and, Security, Services, Information, Infrastructure, Service, ISS, IIS, VISTA, documentation"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Company" content="Veterans Health Administration"/>
+	<meta name="Creator" content="vhaisfstracs"/>
+	<meta name="DateCreated" content="20070606"/>
+	<meta name="DateReviewed" content="20071707"/>
+	<meta name="Description" content="VA FileMan (Version 22.0) and Kernel (Version 8.0) File Access Security"/>
+	<meta name="Language" content="en"/>
+	<meta name="Manager" content="Jack Schram"/>
+	<meta name="Type" content="Manual"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin-left: 2.54cm; margin-right: 2.54cm; margin-top: 2.54cm; margin-bottom: 1.27cm }
+		@page:first { }
+		p { text-align: left; orphans: 2; widows: 2; margin-bottom: 0cm; direction: ltr; background: transparent }
+		p.western { font-family: "Courier New", serif; font-size: 10pt }
+		p.cjk { font-size: 10pt }
+		p.ctl { font-family: "Courier New"; font-size: 12pt }
+		h1 { text-align: left; page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0cm; margin-bottom: 0cm; direction: ltr; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Arial", serif; font-size: 18pt }
+		h1.cjk { font-size: 18pt }
+		h1.ctl { font-family: "Arial"; font-size: 16pt }
+		h2 { text-align: left; page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0cm; margin-bottom: 0cm; direction: ltr; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Arial", serif; font-size: 18pt }
+		h2.cjk { font-size: 18pt }
+		h2.ctl { font-family: "Arial"; font-size: 14pt }
+		h3 { text-align: left; orphans: 2; widows: 2; margin-top: 0cm; margin-bottom: 0cm; direction: ltr; background: transparent }
+		h3.western { font-family: "Times New Roman Bold", serif; font-size: 16pt; font-weight: bold }
+		h3.cjk { font-size: 16pt; font-weight: bold }
+		h3.ctl { font-size: 13pt; font-weight: bold }
+		h4 { font-size: 14pt; font-weight: bold; text-align: left; orphans: 2; widows: 2; margin-top: 0cm; margin-bottom: 0cm; direction: ltr; background: transparent }
+		h5 { text-align: left; page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0cm; margin-bottom: 0cm; direction: ltr; background: transparent; page-break-after: avoid }
+		h5.western { font-size: 11pt; font-weight: bold }
+		h5.cjk { font-size: 11pt; font-weight: bold }
+		h5.ctl { font-size: 13pt; font-weight: bold }
+		a:link { color: #000000; text-decoration: none }
+		a:visited { color: #800080; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000000" vlink="#800080" dir="ltr"><p class="western" align="center">
+  
+<img src="file-security_html_46184314e9a60dee.png" name="Picture 1" align="bottom" width="470" height="353" border="0"/>
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="6" style="font-size: 24pt"><b>VA
+FILEMAN (</b></font></font><font face="Arial, serif"><font size="6" style="font-size: 24pt"><b>Version
+22.0</b></font></font><font face="Arial, serif"><font size="6" style="font-size: 24pt"><b>)
+</b></font></font></font></font>
+</p>
+<p class="western" align="center"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="6" style="font-size: 24pt"><b>and
+KERNEL (</b></font></font><font face="Arial, serif"><font size="6" style="font-size: 24pt"><b>Version
+8.0)</b></font></font></font></font></p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><font face="Arial, serif"><font size="6" style="font-size: 24pt"><b>FILE
+ACCESS SECURITY<br/>
+</b></font></font><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><font face="Arial, serif"><font size="6" style="font-size: 22pt"><b>July
+2007</b></font></font></p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><br/>
+
+</p>
+<p class="western" align="center"><a name="_Toc168795740"></a><a name="_Toc160889747"></a>
+<font face="Arial, serif"><font size="2" style="font-size: 10pt">Department
+of Veterans Affairs</font></font></p>
+<p class="western" align="center"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Veterans
+Health Information Technology (VHIT)</font></font></p>
+<p class="western" align="center"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Common
+Services</font></font></p>
+<ol>
+	<ol>
+		<li><h2 class="western" style="page-break-before: always"><a name="_Toc172441697"></a>
+		Documentation Revision History</h2>
+	</ol>
+</ol>
+<p class="western"></p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">The
+following table displays the revision history for this document.
+Revisions to the documentation are based on a continuous dialogue
+with the Security Services Technical Writers and evolving industry
+standards and styles.</font></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1213" cellpadding="14" cellspacing="0">
+	<col width="102"/>
+
+	<col width="795"/>
+
+	<col width="229"/>
+
+	<thead>
+		<tr valign="top">
+			<td width="102" bgcolor="#dfdfdf" style="background: #dfdfdf; border: 0.75pt solid #000000; padding: 0cm 0.19cm"><p style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Date</b></font></font></p>
+			</td>
+			<td width="795" bgcolor="#dfdfdf" style="background: #dfdfdf; border: 0.75pt solid #000000; padding: 0cm 0.19cm"><p style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Description</b></font></font></p>
+			</td>
+			<td width="229" bgcolor="#dfdfdf" style="background: #dfdfdf; border: 0.75pt solid #000000; padding: 0cm 0.19cm"><p style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Author</b></font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="102" style="border: 0.75pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">7/2007</font></font></p>
+			</td>
+			<td width="795" style="border: 0.75pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">First
+				release of document.</font></font></p>
+			</td>
+			<td width="229" style="border: 0.75pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">REDACTED</font></font></p>
+			</td>
+		</tr>
+	</thead>
+</table>
+<p align="center" style="margin-top: 0.21cm"><a name="_Toc172441709"></a>
+<font face="Times New Roman, serif"><b>Table i: Documentation
+Revision History</b></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western" style="page-break-before: always"><br/>
+
+</p>
+<p class="western" style="page-break-before: always"><font face="Arial, serif"><font size="5" style="font-size: 18pt">Contents</font></font></p>
+<p class="western"></p>
+<p class="western"><br/>
+
+</p>
+<div id="Table of Contents1" dir="ltr"><p style="margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441697">Documentation
+	Revision History</a><a href="#_Toc172441697">	iii</a></font></font></p>
+	<p style="margin-top: 0.21cm; margin-bottom: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441698">Figures
+	and Tables</a><a href="#_Toc172441698">	vi</a></font></font></p>
+	<p style="margin-top: 0.21cm; margin-bottom: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441699">Orientation</a><a href="#_Toc172441699">	vii</a></font></font></p>
+	<p style="margin-top: 0.21cm; margin-bottom: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441700">Introduction</a><a href="#_Toc172441700">	1</a></font></font></p>
+	<p align="right" style="margin-left: 0.64cm; margin-top: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441701">VA
+	FileMan Reserved Symbols Used to Implement File Access Security</a><a href="#_Toc172441701">	1</a></font></font></p>
+	<p style="margin-top: 0.21cm; margin-bottom: 0.21cm"><font face="Times New Roman Bold, serif"><font size="2" style="font-size: 11pt"><b><a href="#_Toc172441702">What
+	Type of File Access Security is Your Site Using?</a><a href="#_Toc172441702">	3</a></b></font></font></p>
+	<p style="margin-top: 0.21cm; margin-bottom: 0.21cm"><font face="Times New Roman Bold, serif"><font size="2" style="font-size: 11pt"><b><a href="#_Toc172441703">How
+	to Use the File Access Security at Your Site</a><a href="#_Toc172441703">	6</a></b></font></font></p>
+	<p align="right" style="margin-left: 0.64cm; margin-top: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441704">Classic
+	VA FileMan File Access Security</a><a href="#_Toc172441704">	6</a></font></font></p>
+	<p style="margin-left: 1.27cm; margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441705">File
+	Level Security Properties</a><a href="#_Toc172441705">	6</a></font></font></p>
+	<p align="right" style="margin-left: 0.64cm; margin-top: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441706">Kernel
+	File Access Security</a><a href="#_Toc172441706">	9</a></font></font></p>
+	<p style="margin-left: 1.27cm; margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441707">File
+	Level Security Properties</a><a href="#_Toc172441707">	9</a></font></font></p>
+	<p style="margin-top: 0.21cm; margin-bottom: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441708">Index</a><a href="#_Toc172441708">	11</a></font></font></p>
+</div>
+<p align="right" style="margin-left: 0.64cm; margin-top: 0.21cm"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<ol>
+	<ol start="2">
+		<li><h2 class="western" style="page-break-before: always"><a name="_Toc172441698"></a>
+		Figures and Tables</h2>
+	</ol>
+</ol>
+<p class="western"></p>
+<p class="western"><br/>
+
+</p>
+<div id="Table of Figures1" dir="ltr"><p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441709">Table
+	i: Documentation Revision History</a><a href="#_Toc172441709">	iii</a></font></font></p>
+	<p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441710">Table
+	ii: Documentation Symbol Descriptions</a><a href="#_Toc172441710">	vii</a></font></font></p>
+	<p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441711">Figure
+	1: Example─Use VA FileMan to determine if your site is using
+	Kernel File Access Security</a><a href="#_Toc172441711">	4</a></font></font></p>
+	<p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441712">Figure
+	2: Example─Security property values in the NEW PERSON file
+	(#200)</a><a href="#_Toc172441712">	4</a></font></font></p>
+	<p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441713">Table
+	3: File level security properties in Classic VA FileMan file access
+	security</a><a href="#_Toc172441713">	8</a></font></font></p>
+	<p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><a href="#_Toc172441714">Table
+	4: File level security properties in Kernel File Access Security</a><a href="#_Toc172441714">	10</a></font></font></p>
+</div>
+<p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-top: 0.21cm; margin-bottom: 0.21cm">
+ 
+</p>
+<ol>
+	<ol start="3">
+		<li><h2 class="western" style="page-break-before: always"><a name="_Toc172441699"></a><a name="_Ref90112654"></a>
+		Orientation</h2>
+	</ol>
+</ol>
+<p class="western"></p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">This
+manual is intended for use in conjunction with the VA FileMan Version
+22.0 as it relates to access security in VistA.</font></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="4" style="font-size: 16pt"><b>How
+to Use this Manual</b></font></font></p>
+<p class="western"></p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">This
+manual uses several methods to highlight different aspects of the
+material. The following symbols are used in the manual to alert the
+reader about special information:</font></font></p>
+<p class="western"><br/>
+
+</p>
+<ul>
+	<li><p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Various
+	symbols are used throughout the documentation to alert the reader to
+	special information. The following table gives a description of each
+	of these symbols:</font></font></p>
+</ul>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1222" cellpadding="14" cellspacing="0">
+	<col width="104"/>
+
+	<col width="1060"/>
+
+	<thead>
+		<tr valign="top">
+			<td width="104" bgcolor="#c4c4c4" style="background: #c4c4c4; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 11pt"><b>Symbol</b></font></font></p>
+			</td>
+			<td width="1060" bgcolor="#c4c4c4" style="background: #c4c4c4; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 11pt"><b>Description</b></font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+	</thead>
+	<tbody>
+		<tr valign="top">
+			<td width="104" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 2" align="bottom" width="65" height="63" border="0"/>
+</p>
+			</td>
+			<td width="1060" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Used
+				to inform the reader of general information including references
+				to additional reading material</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr>
+			<td width="104" height="41" valign="top" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<img src="file-security_html_71fdb0d04673f42f.gif" name="1" align="bottom" vspace="4" width="83" height="83"/>
+</p>
+			</td>
+			<td width="1060" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Used
+				to caution the reader to take special notice of</b></font></font><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>
+				critical information</b></font></font></font></font></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p align="center" style="margin-top: 0.21cm; page-break-after: avoid"><a name="_Toc56498200"></a><a name="_Toc129684889"></a><a name="_Toc172441710"></a>
+<font face="Times New Roman, serif"><b>Table ii: Documentation Symbol
+Descriptions</b></font></p>
+<p class="western"><br/>
+
+</p>
+<ul>
+	<li><p class="western" style="margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Descriptive
+	text is presented in a proportional font (as represented by this
+	font).</font></font></p>
+	<li><p class="western" style="page-break-inside: avoid; margin-top: 0.21cm; margin-bottom: 0.21cm; page-break-after: avoid">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">&quot;Snapshots&quot;
+	of computer online displays (i.e., character-based screen
+	captures/dialogs) and computer source code are shown in a
+	<i>non</i>-proportional font and enclosed within a box. Also
+	included are Graphical User Interface (GUI) Microsoft Windows images
+	(i.e., dialogs or forms).</font></font></p>
+</ul>
+<ul>
+	<li><p class="western" style="page-break-inside: avoid; margin-top: 0.21cm; margin-bottom: 0.21cm; page-break-after: avoid">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">User's
+	responses to online prompts will be boldface type.</font></font></p>
+	<li><p class="western" style="page-break-inside: avoid; margin-top: 0.21cm; margin-bottom: 0.21cm; page-break-after: avoid">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">The
+	&quot;<b>&lt;Enter&gt;</b>&quot; found within these snapshots
+	indicate that the user should press the Enter or Return key on their
+	keyboard.</font></font></p>
+	<li><p class="western" style="page-break-inside: avoid; margin-top: 0.21cm; margin-bottom: 0.21cm; page-break-after: avoid">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Author's
+	comments are displayed in italics.</font></font></p>
+</ul>
+<ul>
+	<li><p class="western" style="margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">All
+	uppercase is reserved for the representation of M code, variable
+	names, or the formal name of options, field and file names, and
+	security keys (e.g., the XUPROGMODE key).</font></font></p>
+</ul>
+<ul>
+	<li><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.21cm; margin-bottom: 0.21cm; page-break-after: avoid">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Conventions
+	for displaying TEST data when used in this document are as
+	follows:</font></font></p>
+</ul>
+<ul>
+	<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">The
+	first three digits (prefix) of any Social Security Numbers (SSN)
+	will begin with either &quot;000&quot; or &quot;666&quot;. </font></font>
+	</p>
+	<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Patient
+	and user names will be formatted as follows: [Application
+	Name]PATIENT,[N] and [Application Name]USER,[N] respectively, where
+	&quot;Application Name&quot; is defined in the Approved Application
+	Abbreviations document, located on the Web site listed below, and
+	where &quot;N&quot; represents the first name as a number spelled
+	out and incremented with each new entry. </font></font>
+	</p>
+</ul>
+<p class="western" style="margin-top: 0.21cm; margin-bottom: 0.21cm"><br/>
+<br/>
+
+</p>
+<dl>
+	<dl>
+		<dl>
+			<dd>
+			<table width="1074" cellpadding="14" cellspacing="0">
+				<col width="63"/>
+
+				<col width="955"/>
+
+				<tr valign="top">
+					<td width="63" height="117" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0; margin-left: -0.03cm; margin-top: 0.11cm">
+						<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 4" align="bottom" width="65" height="63" border="0"/>
+<font color="#000000">
+						</font>
+						</p>
+					</td>
+					<td width="955" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0; margin-left: -0.03cm; margin-top: 0.11cm; margin-bottom: 0.11cm">
+						<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font color="#000000">The
+						list of Approved Application Abbreviations can be found at the
+						following Web site: </font></font></font>
+						</p>
+						<p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-left: 0.61cm; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+						<font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><span style="background: #ffff00">REDACTED</span></font></font></font></p>
+						<p class="western" style="orphans: 0; widows: 0; margin-left: 0.58cm; margin-top: 0.11cm">
+						<br/>
+
+						</p>
+					</td>
+				</tr>
+			</table>
+		</dl>
+	</dl>
+</dl>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western" style="page-break-after: avoid"><font face="Times New Roman, serif"><font size="4" style="font-size: 16pt"><b>Who
+Should Read this Manual?</b></font></font></p>
+<p class="western" style="page-break-after: avoid"></p>
+<p class="western" style="page-break-after: avoid"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">This
+manual has been written for personnel responsible for implementing
+security at the <font color="#000000">Veterans Integrated Service
+Networks</font> (VISN), to include Information Resource Management
+(IRM) personnel involved with implementing the same. If you need more
+information, it is suggested that you look at the various VA OI
+Health Systems Design &amp; Development (HSD&amp;D) home web pages
+for a general orientation to VistA at this address: </font></font>
+</p>
+<p class="western" style="margin-left: 0.64cm; margin-top: 0.21cm; margin-bottom: 0.21cm; page-break-after: avoid">
+<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font color="#000000"><span style="text-decoration: none"><a href="http://vaww.vista.med.va.gov/">http://vaww.vista.med.va.gov</a></span></font>
+</font></font>
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+<font face="Times New Roman, serif"><font size="4" style="font-size: 16pt"><b>Reference
+Materials</b></font></font></p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Readers
+who wish to learn more about VA FileMan should consult the manuals
+listed below located on the VHA Software Document Library in MS-Word
+and PDF formats:</font></font></p>
+<p class="western" style="page-break-inside: avoid; margin-left: 0.64cm; margin-top: 0.21cm; margin-bottom: 0.21cm; page-break-after: avoid">
+<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font color="#000000"><span style="text-decoration: none"><a href="http://www.va.gov/vdl/application.asp?appid=5">http://www.va.gov/vdl/application.asp?appid=5</a></span></font>
+</font></font>
+</p>
+<ul>
+	<li><p class="western" style="page-break-inside: avoid; margin-top: 0.21cm; margin-bottom: 0.21cm; page-break-after: avoid">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><i>VA
+	FileMan V. 22.0 Release Notes</i></font></font></p>
+	<li><p class="western" style="page-break-inside: avoid; margin-top: 0.21cm; margin-bottom: 0.21cm; page-break-after: avoid">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><i>VA
+	FileMan V. 22.0 Installation Guide</i></font></font></p>
+	<li><p class="western" style="page-break-inside: avoid; margin-top: 0.21cm; margin-bottom: 0.21cm; page-break-after: avoid">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><i>VA
+	FileMan V. 22.0 Technical Manual</i></font></font></p>
+</ul>
+<ul>
+	<li><p class="western" style="margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><i>VA
+	FileMan V. 22.0 Getting Started Manual</i></font></font></p>
+	<li><p class="western" style="margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><i>VA
+	FileMan V. 22.0 Advanced User Manual</i></font></font></p>
+	<li><p class="western" style="margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><i>VA
+	FileMan V. 22.0 Programmer Manual</i></font></font></p>
+</ul>
+<p class="western" style="margin-top: 0.11cm; margin-bottom: 0.11cm"><br/>
+<br/>
+
+</p>
+<p class="western" style="margin-top: 0.11cm; margin-bottom: 0.11cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">VA
+FileMan documentation can also be accessed in HTML format at the
+following Web site:</font></font></p>
+<p class="western" style="page-break-inside: avoid; margin-left: 0.61cm; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+<font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><span style="background: #ffff00">REDACTED</span></font></font></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">VistA
+documentation is made available online in Microsoft Word format and
+in Adobe Acrobat Portable Document Format (PDF). Adobe Acrobat
+Portable (PDF) documents <i>must </i>be read using the Adobe Acrobat
+Reader (i.e., ACROREAD.EXE), which is freely distributed by Adobe
+Systems Incorporated at the following web address:</font></font></p>
+<p class="western" style="margin-top: 0.21cm; margin-bottom: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">	<font color="#000000"><span style="text-decoration: none"><a href="http://www.adobe.com/">http://www.adobe.com/</a></span></font>
+</font></font>
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1260" cellpadding="14" cellspacing="0">
+	<col width="105"/>
+
+	<col width="1099"/>
+
+	<tr valign="top">
+		<td width="105" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 5" align="bottom" width="65" height="63" border="0"/>
+</p>
+		</td>
+		<td width="1099" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">For
+			more information on the use of Adobe Acrobat Reader, please refer
+			to the &quot;Adobe Acrobat Quick Guide&quot; at the following web
+			address: <font color="#000000"><span style="text-decoration: none"><a href="http://vista.med.va.gov/iis/acrobat/index.asp">http://vista.med.va.gov/iis/acrobat/index.asp</a></span></font>
+			</font></font>
+			</p>
+		</td>
+	</tr>
+</table>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">VistA
+documentation and software can also be downloaded from the Enterprise
+VistA Support (EVS) anonymous directories:</font></font></p>
+<ul>
+	<li><p class="western" style="margin-top: 0.21cm; margin-bottom: 0.21cm">
+	<font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><b>Preferred
+	Method	download.vista.med.va.gov</b></font></font></font></p>
+</ul>
+<p class="western"><br/>
+
+</p>
+<dl>
+	<dd>
+	<table width="1236" cellpadding="14" cellspacing="0" style="page-break-inside: avoid">
+		<col width="57"/>
+
+		<col width="1124"/>
+
+		<tr>
+			<td width="57" valign="top" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0">
+				<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 6" align="bottom" width="63" height="63" border="0"/>
+</p>
+			</td>
+			<td width="1124" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">This
+				method transmits the files from the first available FTP server.</font></font></p>
+			</td>
+		</tr>
+	</table>
+</dl>
+<p class="western"><br/>
+
+</p>
+<ul>
+	<li><p><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Albany
+	OIFO	REDACTED</font></font></p>
+	<li><p style="margin-top: 0.21cm; margin-bottom: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Hines
+	OIFO	REDACTED</font></font></p>
+	<li><p style="margin-top: 0.21cm; margin-bottom: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Salt
+	Lake City OIFO	REDACTED</font></font></p>
+</ul>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid"><a name="_Toc485620882"></a><a name="_Toc4315558"></a><a name="_Toc5439290"></a><a name="_Toc5593093"></a><a name="_Toc6112764"></a><a name="_Toc21232473"></a><a name="_Toc397138030"></a>
+<font face="Times New Roman, serif"><font size="4" style="font-size: 16pt"><b>How
+to Obtain Technical Information Online</b></font></font></p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+<br/>
+
+</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><b>Obtaining
+Data Dictionary Listings</b></font></font></p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Technical
+information about VistA M-based files and their associated fields is
+stored in data dictionaries. You can use the List File Attributes
+option on the Data Dictionary Utilities submenu in VA FileMan to
+print formatted data dictionaries.</font></font></p>
+<p class="western"><br/>
+
+</p>
+<table width="1260" cellpadding="14" cellspacing="0" style="page-break-inside: avoid">
+	<col width="68"/>
+
+	<col width="1135"/>
+
+	<tr valign="top">
+		<td width="68" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0; margin-left: -0.03cm; margin-top: 0.11cm">
+			<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 7" align="bottom" width="63" height="63" border="0"/>
+</p>
+		</td>
+		<td width="1135" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0; margin-left: -0.03cm; margin-top: 0.11cm; margin-bottom: 0.11cm">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">For
+			details about obtaining data dictionaries and about the formats
+			available, please refer to the &quot;List File Attributes&quot;
+			chapter in the &quot;File Management&quot; section of the <i>VA
+			FileMan Advanced User Manual</i> located at the following address:</font></font></p>
+			<p class="western" style="orphans: 0; widows: 0; margin-left: 0.6cm; margin-top: 0.11cm">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font color="#000000"><span style="text-decoration: none"><a href="http://www.va.gov/vdl/application.asp?appid=5">http://www.va.gov/vdl/application.asp?appid=5</a></span></font></font></font></p>
+		</td>
+	</tr>
+</table>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1260" cellpadding="14" cellspacing="0">
+	<col width="105"/>
+
+	<col width="1099"/>
+
+	<tr valign="top">
+		<td width="105" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<img src="file-security_html_71fdb0d04673f42f.png" name="Picture 8" align="bottom" width="85" height="85" border="0"/>
+</p>
+		</td>
+		<td width="1099" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>DISCLAIMER:
+			The appearance of external hyperlink references in this manual
+			does not constitute endorsement by the Department of Veterans
+			Affairs (VA) of this Web site or the information, products, or
+			services contained therein. The VA does not exercise any editorial
+			control over the information you may find at these locations. Such
+			links are provided and are consistent with the stated purpose of
+			this VA Intranet Service. </b></font></font>
+			</p>
+		</td>
+	</tr>
+</table>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western" style="page-break-before: always"><br/>
+
+</p>
+<ol>
+	<ol start="4">
+		<li><h2 class="western" style="page-break-before: always"><a name="_Toc172441700"></a>
+		Introduction</h2>
+	</ol>
+</ol>
+<p class="western"></p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">VA
+FileMan is VistA's database management system. VA FileMan APIs are
+divided up into two categories: </font></font></p>
+<ul>
+	<li><p class="western" style="margin-top: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Classic
+	VA FileMan─Certain modules within VA FileMan are callable by other
+	M routines or when using the VA FileMan exported menu options. File
+	access security checking is performed via Classic FileMan APIs. </font></font></p>
+</ul>
+<p class="western" style="margin-left: 1.27cm"><br/>
+
+</p>
+<dl>
+	<dd>
+	<table width="1128" cellpadding="14" cellspacing="0">
+		<col width="66"/>
+
+		<col width="1006"/>
+
+		<tr>
+			<td width="66" valign="top" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 9" align="bottom" width="65" height="63" border="0"/>
+</p>
+			</td>
+			<td width="1006" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Another
+				implementation of file access security checking is done via
+				Kernel File Access Security. This topic is detailed further in
+				this documentation.</font></font></p>
+			</td>
+		</tr>
+	</table>
+</dl>
+<p class="western" style="margin-left: 1.27cm"><br/>
+
+</p>
+<ul>
+	<li><p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Database
+	Server (DBS)─No file access security checking is performed on VA
+	FileMan Database Server (DBS) calls because they separate
+	interactions with the database created by programmers. They are
+	&quot;silent,&quot; meaning there is no interaction with the
+	end-user.</font></font></p>
+</ul>
+<p class="western" style="margin-left: 1.27cm"><br/>
+
+</p>
+<dl>
+	<dd>
+	<table width="1128" cellpadding="14" cellspacing="0">
+		<col width="66"/>
+
+		<col width="1006"/>
+
+		<tr>
+			<td width="66" valign="top" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 10" align="bottom" width="65" height="63" border="0"/>
+</p>
+			</td>
+			<td width="1006" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">There
+				is no further discussion about the VA FileMan Database Server
+				(DBS) calls in this documentation.</font></font></p>
+			</td>
+		</tr>
+	</table>
+</dl>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<ol>
+	<ol>
+		<ol>
+			<li><h3 class="western"><a name="_Toc172441701"></a>VA FileMan
+			Reserved Symbols Used to Implement File Access Security</h3>
+		</ol>
+	</ol>
+</ol>
+<p class="western"> 
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">VA
+FileMan recognizes the two symbols listed below. All other symbols
+are available to use in order to implement site file access security
+via Classic FileMan APIs at the developer or VA Facilities
+discretion. DUZ(0) is set after the user has been validated by the
+Kernel. The value for any user's DUZ(0) can be found in the NEW
+PERSON file (#200), FILE MANAGER ACCESS CODE field (#3). </font></font></p>
+<ul>
+	<li><p class="western" style="margin-top: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">At-sign
+	(@)─Programmer access in VistA is defined as DUZ(0)=&quot;@&quot;.
+	It grants the privilege to become a programmer in VistA. Programmer
+	access allows you to work outside many of the security controls
+	enforced by VA FileMan, enables access to all VA FileMan files,
+	access to modify data dictionaries, etc. It is important to proceed
+	with caution when having access to the system in this way.</font></font></p>
+	<li><p class="western" style="margin-top: 0.11cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Caret
+	(^)─The caret (^) trumps the at-sign (@). For example, if the
+	user's DUZ(0)=&quot;@&quot;, but WR ACCESS is set to a caret (^),
+	that user cannot write (e.g., via the VA FileMan Enter Or Edit File
+	Entries option) to that file. This is often used at the field level,
+	obstructing all DUZ(0) access to that field.</font></font></p>
+</ul>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1246" cellpadding="14" cellspacing="0">
+	<col width="66"/>
+
+	<col width="1124"/>
+
+	<tr valign="top">
+		<td width="66" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 11" align="bottom" width="65" height="63" border="0"/>
+</p>
+		</td>
+		<td width="1124" style="border: none; padding: 0cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; page-break-after: avoid">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">For
+			information about DUZ(0)=&quot;@&quot; programmer access in VistA,
+			consult the <i>VA FileMan V. 22.0 Programmer Manual</i>, located
+			on the VHA Software Document Library:</font></font></p>
+			<p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-left: 0.64cm; margin-top: 0.21cm; page-break-after: avoid">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font color="#000000"><span style="text-decoration: none"><a href="http://www.va.gov/vdl/application.asp?appid=5">http://www.va.gov/vdl/application.asp?appid=5</a></span></font>
+			 </font></font>
+			</p>
+		</td>
+	</tr>
+</table>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western" style="page-break-before: always"><br/>
+
+</p>
+<h1 class="western" style="page-break-before: always"><a name="_Toc172441702"></a>
+What Type of File Access Security is Your Site Using?</h1>
+<p class="western"><br/>
+
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Security
+control for file access at VA Facilities is implemented via either of
+the following two methods: </font></font>
+</p>
+<ul>
+	<li><p class="western" style="margin-top: 0.21cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Classic
+	VA FileMan file access security</font></font></p>
+	<li><p class="western" style="margin-top: 0.11cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Kernel
+	File Access Security</font></font></p>
+</ul>
+<p class="western"><br/>
+
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">In
+order to know how to manage file security at your site, it is first
+necessary to determine which security implementation your site is
+using. An easy way to determine if the Kernel File Access Security
+option [XUFILEACCESS] has been implemented is to use the VA FileMan
+Data Dictionary Utilities option [DI DDU], as shown in Figure 1.</font></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Select
+the List File Attributes option [DILIST]. At the &quot;START WITH
+WHAT FILE:&quot; prompt, select a VistA Fileman file from which to
+display the data dictionary. If your site is using Kernel File Access
+Security, the following message will appear after the file
+description and security access information is displayed, Figure 1:</font></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western" style="margin-left: 0.64cm"><font face="Courier New, serif"><font size="2" style="font-size: 10pt">(NOTE:
+Kernel's File Access Security has been installed in this UCI.)</font></font></p>
+<p class="western"><br/>
+
+</p>
+<table width="1246" cellpadding="14" cellspacing="0">
+	<col width="66"/>
+
+	<col width="1124"/>
+
+	<tr>
+		<td width="66" valign="top" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 12" align="bottom" width="65" height="63" border="0"/>
+</p>
+		</td>
+		<td width="1124" style="border: none; padding: 0cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; page-break-after: avoid">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">The
+			file used to create the screen capture in Figure 1 is fictitious
+			and used only for the purposes of this example.</font></font></p>
+		</td>
+	</tr>
+</table>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">VA FileMan 22.0</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">Select OPTION: <b>?</b></font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+    <font size="2" style="font-size: 9pt">Answer with OPTION NUMBER,
+or NAME</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">Choose from:</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">1            ENTER OR EDIT
+FILE ENTRIES</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">2            PRINT FILE
+ENTRIES</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">3            SEARCH FILE
+ENTRIES</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">4            MODIFY FILE
+ATTRIBUTES</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">5            INQUIRE TO FILE
+ENTRIES</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">6            UTILITY
+FUNCTIONS</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">7            OTHER OPTIONS</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">8            DATA DICTIONARY
+UTILITIES</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">9            TRANSFER
+ENTRIES</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">Select OPTION: <b>8 &lt;Enter&gt;</b>
+DATA DICTIONARY UTILITIES</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">Select DATA DICTIONARY UTILITY
+OPTION: <b>?</b></font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+    <font size="2" style="font-size: 9pt">Answer with DATA DICTIONARY
+UTILITY OPTION NUMBER, or NAME</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">Choose from:</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">1            LIST FILE
+ATTRIBUTES</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">2            MAP POINTER
+RELATIONS</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+   <font size="2" style="font-size: 9pt">3            CHECK/FIX DD
+STRUCTURE</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">Select DATA DICTIONARY UTILITY
+OPTION: <b>1 &lt;Enter&gt;</b> LIST FILE ATTRIBUTES</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">START WITH WHAT FILE: FILE//
+<b>EXAMPLE &lt;Enter&gt;</b></font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+      <font size="2" style="font-size: 9pt">GO TO WHAT FILE:
+EXAMPLE//<b> &lt;Enter&gt;</b></font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+      <font size="2" style="font-size: 9pt">Select SUB-FILE: <b>&lt;Enter&gt;</b></font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">Select LISTING FORMAT:
+STANDARD// <b>&lt;Enter&gt;</b></font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">Start with field: FIRST//
+<b>&lt;Enter&gt;</b></font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">DEVICE:  <b>&lt;Enter&gt;</b>  
+ Right Margin: 80// <b>&lt;Enter&gt;</b></font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">STANDARD DATA DICTIONARY #123
+-- EXAMPLE FILE    JUN 5,2007@15:57:14  PAGE 1</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">STORED IN ^MYGLOBAL(123,  (999
+ENTRIES)  SITE: NVS.FO-ANYSITE.MED.VA.GOV        UCI: NVS,NOU
+(VERSION 8.0)</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">DATA          NAME             
+    GLOBAL        DATA</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">ELEMENT       TITLE            
+    LOCATION      TYPE</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">-------------------------------------------------------------------------------</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt">This is an example file.</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+ 
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+ <img src="file-security_html_81f49b4e0a065153.gif" name="AutoShape 13" alt="AutoShape 13" align="left" hspace="48" vspace="2" width="222" height="67"/>
+<span id="Frame2" dir="ltr" style="float: left; width: 3.01cm; border: none; padding: 0cm; background: #ffffff"><p>
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 9pt">Security
+	access information.</font></font></font></font></p>
+</span>             <font size="2">DD ACCESS: @</font>
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+ <img src="file-security_html_6df4ee766059958a.gif" name="AutoShape 12" alt="AutoShape 12" align="left" hspace="91" vspace="25" width="353" height="94"/>
+<span id="Frame3" dir="ltr" style="float: left; width: 4.76cm; border: none; padding: 0cm; background: #ffffff"><p>
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 9pt">Message
+	indicated this VA Facility has implemented Kernel File Access
+	Security.</font></font></font></font></p>
+</span>             <font size="2">RD ACCESS: D</font>
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+              <font size="2" style="font-size: 9pt">WR ACCESS: d</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm"><a name="OLE_LINK1"></a><a name="OLE_LINK2"></a>
+             <font size="2" style="font-size: 9pt">DEL ACCESS: d</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+           <font size="2" style="font-size: 9pt">LAYGO ACCESS: d</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+           <font size="2" style="font-size: 9pt">AUDIT ACCESS: @</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+        <font size="2" style="font-size: 9pt">(NOTE: Kernel's File
+Access Security has been installed in this UCI.)</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="2" style="font-size: 9pt"><i>[Data Dictionary listing
+continues as it would normally…]</i></font></p>
+<p align="center" style="page-break-inside: avoid; margin-top: 0.21cm; page-break-after: avoid"><a name="_Toc172441711"></a><a name="_Ref168761732"></a>
+<font face="Times New Roman, serif"><b>Figure 1: Example─Use VA
+FileMan to determine if your site is using Kernel File Access
+Security</b></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">If
+your VA Facility has implemented Kernel File Access Security, it is
+not using Classic VA FileMan file access security.</font></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1246" cellpadding="14" cellspacing="0">
+	<col width="66"/>
+
+	<col width="1124"/>
+
+	<tr valign="top">
+		<td width="66" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 13" align="bottom" width="65" height="63" border="0"/>
+</p>
+		</td>
+		<td width="1124" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Developers
+			can also verify Kernel File Access Security by checking for the
+			^VA(200,&quot;AFOF&quot;) cross-reference. If it exists, then
+			Kernel File Access Security has been implemented.</font></font></p>
+		</td>
+	</tr>
+</table>
+<p class="western"><br/>
+
+</p>
+<p class="western">Figure 2 <font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">shows
+user field values in the NEW PERSON file (#200) using the same
+fictitious EXAMPLE file (#123) from Figure 1. </font></font>
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="1" style="font-size: 8pt">NEW PERSON LIST                
+       JUN  6,2007  06:18    PAGE 1</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+                                                   <font size="1" style="font-size: 8pt">FILE
+MANAGER</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="1" style="font-size: 8pt">NAME                           
+                   ACCESS CODE</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+                           <font size="1" style="font-size: 8pt">DD  
+   DEL     LAYGO   RD      WR      AUDIT</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="1" style="font-size: 8pt">FILE                      
+ACCESS  ACCESS  ACCESS  ACCESS  ACCESS  ACCESS</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="1" style="font-size: 8pt">---------------------------------------------------------------------------------------------</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="1" style="font-size: 8pt">FMUSER,ONE                     
+                   dS</font></p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<br/>
+
+</p>
+<p style="margin-left: 0.64cm; border: 0.50pt solid #000000; padding: 0.14cm">
+<font size="1" style="font-size: 8pt">EXAMPLE                        
+                   YES</font></p>
+<p align="center" style="margin-top: 0.21cm"><a name="_Toc172441712"></a><a name="_Ref168883552"></a>
+<font face="Times New Roman, serif"><b>Figure 2: Example─Security
+property values in the NEW PERSON file (#200)</b></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">A
+Null value is equal to a &quot;NO.&quot; In Figure 2, the DUZ(0) for
+the user named ONE FMUSER is equal to “dS.” Based on the security
+access shown in Figure 1, this indicates that the user does not have
+READ (RD) access. </font></font>
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1246" cellpadding="14" cellspacing="0">
+	<col width="66"/>
+
+	<col width="1124"/>
+
+	<tr valign="top">
+		<td width="66" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 14" align="bottom" width="65" height="63" border="0"/>
+</p>
+		</td>
+		<td width="1124" style="border: none; padding: 0cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.21cm; page-break-after: avoid">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">For
+			information on the difference between Kernel and VA Classic
+			FileMan file access security, see the following topic &quot;Difference in Behavior Between Kernel File Access Security and Classic VA FileMan File Access Security&quot;
+			in this documentation.</font></font></p>
+		</td>
+	</tr>
+</table>
+<p class="western"> 
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1246" cellpadding="14" cellspacing="0">
+	<col width="66"/>
+
+	<col width="1124"/>
+
+	<tr>
+		<td width="66" style="border: none; padding: 0cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 15" align="bottom" width="65" height="63" border="0"/>
+</p>
+		</td>
+		<td width="1124" valign="top" style="border: none; padding: 0cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; page-break-after: avoid">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">For
+			information about Kernel File Access Security, consult the <i>Kernel
+			Systems Management Guide, Version 8.0</i>, in the &quot;File
+			Access Security&quot; chapter, located on the VHA Software
+			Document Library:</font></font></p>
+			<p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-left: 0.64cm; margin-top: 0.21cm; page-break-after: avoid">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font color="#000000"><span style="text-decoration: none"><a href="http://www.va.gov/vdl/application.asp?appid=10">http://www.va.gov/vdl/application.asp?appid=10</a></span></font>
+			 </font></font>
+			</p>
+		</td>
+	</tr>
+</table>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<h1 class="western" style="page-break-before: always"><a name="_Ref168827005"></a><a name="_Toc172441703"></a>
+How to Use the File Access Security at Your Site</h1>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+<br/>
+
+</p>
+<ul>
+	<li><p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">If
+	your VA Facility is <i>not </i>using Kernel File Access Security,
+	read the section titled &quot;Classic VA FileMan File Access Security&quot;</font></font></p>
+	<li><p class="western" style="page-break-inside: avoid; margin-top: 0.21cm; page-break-after: avoid">
+	<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">If
+	your VA Facility <i>is </i>using Kernel File Access Security, read
+	the section titled &quot;Kernel File Access Security&quot; </font></font>
+	</p>
+</ul>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<ol>
+	<ol>
+		<ol start="2">
+			<li><h3 class="western"><a name="_Ref168878201"></a><a name="_Ref168965083"></a><a name="_Toc172441704"></a>
+			Classic VA FileMan File Access Security</h3>
+		</ol>
+	</ol>
+</ol>
+<p class="western"></p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Given
+the example in Figure 1, if you <i>do not</i> see the message &quot;(NOTE:
+Kernel's File Access Security has been installed in this UCI.)&quot;
+when displaying a VistA file in the VA FileMan Data Dictionary
+Utilities option, then your site has not implemented Kernel File
+Access Security. This means that file access security at your site is
+implemented based on VA FileMan symbol(s) that are set into the
+security access property for a particular file via Classic FileMan
+APIs. User file access is based upon the VA FileMan symbols contained
+in the DUZ(0) value. </font></font>
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="3" style="font-size: 12pt"><b>Example</b></font></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">In
+this example, the RD ACCESS for the fictitious file, EXAMPLE file
+(#123), in Figure 1 is equal to &quot;D,&quot; and the user’s
+DUZ(0) is equal to &quot;AaZz.&quot; This means that the user will
+not be able to view the data via VA FileMan’s exported menus
+because the DUZ(0) does not contain the symbol &quot;D.&quot; If that
+same user’s DUZ(0) was equal to Aa<b>D</b>Zz, then the user <i>is</i>
+authorized to view the file's data via the VA FileMan’s exported
+menus because the DUZ(0) contains the symbol &quot;D.&quot;</font></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1246" cellpadding="14" cellspacing="0">
+	<col width="66"/>
+
+	<col width="1124"/>
+
+	<tr valign="top">
+		<td width="66" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 16" align="bottom" width="65" height="63" border="0"/>
+</p>
+		</td>
+		<td width="1124" style="border: none; padding: 0cm">
+			<ol>
+				<ol>
+					<ol>
+						<ol>
+							<ol><li><h5 class="western" style="orphans: 0; widows: 0">Difference
+								in Behavior Between Kernel File Access Security and Classic
+								VA FileMan File Access Security 
+								</h5>
+							</ol>
+						</ol>
+					</ol>
+				</ol>
+			</ol>
+			<p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.21cm; page-break-after: avoid">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">In
+			the Classic VA FileMan file access security environment, the user
+			(shown in the previous example) would <i>not</i> be authorized to
+			view the data contained in the EXAMPLE file (#123) via the VA
+			FileMan exported menu option(s) because the user's (ONE FMUSER)
+			FILEMANAGER ACCESS CODE field (#3) does not contain the symbol
+			&quot;D.&quot; However, in a Kernel File Access Security
+			environment, the file RD ACCESS is set to Yes for the user. Hence
+			the user <i>would be able</i> to view the data.</font></font></p>
+		</td>
+	</tr>
+</table>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<ol>
+	<ol>
+		<ol>
+			<ol start="2">
+				<li><h4 style="page-break-inside: avoid; page-break-after: avoid"><a name="_Toc172441705"></a>
+				File Level Security Properties</h4>
+			</ol>
+		</ol>
+	</ol>
+</ol>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+<br/>
+
+</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">There
+are six security properties involved with file access security, <b>Table 3</b>.
+If a security property is not defined, the value is null. In the
+Classic VA FileMan file access security environment, properties with
+null values open up full user access to the VA FileMan exported menu
+option(s) for that property.</font></font></p>
+<p class="western"><br/>
+
+</p>
+<table width="1236" cellpadding="14" cellspacing="0">
+	<col width="160"/>
+
+	<col width="518"/>
+
+	<col width="472"/>
+
+	<thead>
+		<tr valign="top">
+			<td width="160" bgcolor="#e0e0e0" style="background: #e0e0e0; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Access</b></font></font></p>
+			</td>
+			<td width="518" bgcolor="#e0e0e0" style="background: #e0e0e0; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-right: -7.49cm; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Security
+				Property Description</b></font></font></p>
+			</td>
+			<td width="472" bgcolor="#e0e0e0" style="background: #e0e0e0; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-right: -7.49cm; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Property
+				Location (Classic VA FileMan)</b></font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+	</thead>
+	<tbody>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">AUDIT</font></font></p>
+			</td>
+			<td width="518" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				AUDIT security property controls the setting of auditing
+				characteristics and the deletion of audit trails. Examples of the
+				VA FileMan options that this property controls are as follows:</font></font>
+				</font></font></p>
+				<ul>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Fields
+					Being Audited [DIAUDITED FIELDS]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Data
+					Dictionaries Being Audited [DIAUDIT DD]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Purge
+					Data Audits [DIAUDIT PURGE DATA]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Purge
+					DD Audits [DIAUDIT PURGE DD]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Turn
+					Data Audit On/Off [DIAUDIT TURN ON/OFF]</font></font></p>
+				</ul>
+			</td>
+			<td width="472" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">^DIC(&lt;file
+				number&gt;,0,”AUDIT”)=&lt;value&gt;</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">DATA
+				DICTIONARY<br/>
+&quot;DD&quot;</font></font></p>
+			</td>
+			<td width="518" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				DATA DICTIONARY security property controls who has access to
+				modify the data dictionary. Examples of the VA FileMan options
+				that this property controls are as follows:</font></font> </font></font></p>
+				<ul>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Modify
+					File Attributes [DIMODIFY]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Utility
+					Functions [DIUTILITY]/(Data Dictionary [DIDDU])</font></font></p>
+				</ul>
+			</td>
+			<td width="472" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">^DIC(&lt;file
+				number&gt;,0,”DD”)=&lt;value&gt;</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">DELETE
+				&quot;DEL&quot;</font></font></p>
+			</td>
+			<td width="518" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				DELETE security property controls who can delete an existing
+				record that is contained within the file. Examples of the VA
+				FileMan options that this property controls are as follows:</font></font>
+				</font></font></p>
+				<ul>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Enter
+					or Edit File Entries [DIEDIT]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Transfer
+					Entries [DITRANSFER]</font></font></p>
+				</ul>
+			</td>
+			<td width="472" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">^DIC(&lt;file
+				number&gt;,0,”DEL”)=&lt;value&gt;</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">LAYGO</font></font></p>
+			</td>
+			<td width="518" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				LAYGO (Learn As You Go) security property controls who can add a
+				new record to the file. Examples of the VA FileMan options that
+				this property controls are as follows:</font></font> </font></font></p>
+				<ul>
+					<li><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Enter
+					or Edit File Entries [DIEDIT]</font></font></p>
+				</ul>
+				<p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.21cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">NOTE:
+				You must have LAYGO and WRITE access to a file to add new
+				entries. In addition, you must have WRITE access at the field
+				level for all required identifier fields.</font></font></p>
+			</td>
+			<td width="472" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">^DIC(&lt;file
+				number&gt;,0,”LAYGO”)=&lt;value&gt;</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">READ
+				&quot;RD&quot;</font></font></p>
+			</td>
+			<td width="518" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				Read security property controls who has access to read data
+				contained within a file. Examples of the VA FileMan options that
+				this property controls are as follows:</font></font> </font></font></p>
+				<ul>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Print
+					File Entries [DIPRINT]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Search
+					File Entries [DISEARCH]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Inquire
+					to File Entries [DIINQUIRE]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Statistics
+					[DISTATISTICS], List File Attributes [DILIST]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+					<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Transfer
+					File Entries [DITRANSFER]  (transfer-from file)</font></font></font></font></p>
+				</ul>
+			</td>
+			<td width="472" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">^DIC(&lt;file
+				number&gt;,0,”RD”)=&lt;value&gt; </font></font>
+				</p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">WRITE
+				&quot;WR&quot;</font></font></p>
+			</td>
+			<td width="518" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				WRITE security property controls who can alter data in an
+				existing record that is contained within the file. Examples of
+				the VA FileMan options that this property controls are as
+				follows:</font></font> </font></font></p>
+				<ul>
+					<li><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Enter
+					or Edit File Entries [DIEDIT]</font></font></p>
+					<li><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Transfer
+					[File] Entries [DITRANSFER] (transfer-to file)</font></font></p>
+				</ul>
+			</td>
+			<td width="472" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">^DIC(&lt;file
+				number&gt;,0,”WR”)=&lt;value&gt;</font></font></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p align="center" style="page-break-inside: avoid; margin-top: 0.21cm"><a name="_Toc172441713"></a><a name="_Ref168826189"></a>
+<font face="Times New Roman, serif"><b>Table 3: File level security
+properties in Classic VA FileMan file access security</b></font></p>
+<ol>
+	<ol>
+		<ol start="3">
+			<li><h3 class="western" style="page-break-before: always"><a name="_Ref168826990"></a><a name="_Ref168828357"></a><a name="_Ref168965057"></a><a name="_Toc172441706"></a><a name="_Ref168825927"></a>
+			Kernel File Access Security</h3>
+		</ol>
+	</ol>
+</ol>
+<p class="western"></p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Given
+the example in Figure 1, if you <i>do</i> see the message &quot;(NOTE:
+Kernel's File Access Security has been installed in this UCI.)&quot;
+when displaying a VistA file in the VA FileMan Data Dictionary
+Utilities option, file access security is controlled by the
+ACCESSIBLE FILE multiple (#32) in the NEW PERSON file (#200). This
+means that file access security to a particular file is <i>not</i>
+based on the VA FileMan Access Code DUZ(0) value. Rather, a lookup is
+done on the user’s ACCESSIBLE FILE multiple (#32) record in the NEW
+PERSON file (#200)  to determine which accesses are allowed to the
+file in question via VA FileMan exported menus. If the users VA
+FileMan Access Code [i.e., DUZ(0)] is equal to the at-sign (<b>@</b>),
+they are allowed access to all files.</font></font></p>
+<p class="western"><br/>
+
+</p>
+<table width="1246" cellpadding="14" cellspacing="0">
+	<col width="66"/>
+
+	<col width="1124"/>
+
+	<tr valign="top">
+		<td width="66" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 17" align="bottom" width="65" height="63" border="0"/>
+</p>
+		</td>
+		<td width="1124" style="border: none; padding: 0cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.21cm; page-break-after: avoid">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Kernel
+			File Access Security is known as an Access Control List in other
+			systems.</font></font></p>
+		</td>
+	</tr>
+</table>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<ol>
+	<ol>
+		<ol>
+			<ol>
+				<li><h4><a name="_Toc172441707"></a>File Level Security
+				Properties</h4>
+			</ol>
+		</ol>
+	</ol>
+</ol>
+<p class="western"><br/>
+
+</p>
+<p class="western"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">There
+are six security properties involved with file access security that
+are equivalent to the Classic VA FileMan file access security, Table 4.
+Unlike Classic VA FileMan file access security, in a Kernel File
+Access Security environment, if the security property is not defined,
+the VA FileMan exported menu option(s) for that property are <i>not</i>
+open to full access for users. </font></font>
+</p>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1246" cellpadding="14" cellspacing="0">
+	<col width="66"/>
+
+	<col width="1124"/>
+
+	<tr>
+		<td width="66" valign="top" style="border: none; padding: 0cm"><p class="western" align="center" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+			<img src="file-security_html_8f4c4f469c39ded4.png" name="Picture 18" align="bottom" width="65" height="63" border="0"/>
+</p>
+		</td>
+		<td width="1124" style="border: none; padding: 0cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; page-break-after: avoid">
+			<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">These
+			same security properties left undefined in a Classic VA FileMan
+			file access security environment open the related VA FileMan
+			exported menu option(s) up to full access for users.</font></font></p>
+		</td>
+	</tr>
+</table>
+<p class="western"><br/>
+
+</p>
+<p class="western"><br/>
+
+</p>
+<table width="1236" cellpadding="14" cellspacing="0">
+	<col width="160"/>
+
+	<col width="588"/>
+
+	<col width="402"/>
+
+	<thead>
+		<tr valign="top">
+			<td width="160" bgcolor="#e0e0e0" style="background: #e0e0e0; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Access</b></font></font></p>
+			</td>
+			<td width="588" bgcolor="#e0e0e0" style="background: #e0e0e0; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-right: -7.49cm; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Security
+				Property Description</b></font></font></p>
+			</td>
+			<td width="402" bgcolor="#e0e0e0" style="background: #e0e0e0; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-right: -7.49cm; margin-top: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Property
+				Location (</b></font></font><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Kernel
+				File<br/>
+Access Security</b></font></font><font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>)</b></font></font></font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+	</thead>
+	<tbody>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">AUDIT</font></font></p>
+			</td>
+			<td width="588" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				AUDIT security property controls the setting of auditing
+				characteristics and the deletion of audit trails. Examples of the
+				VA FileMan options that this property controls are as follows:</font></font>
+				</font></font></p>
+				<ul>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Fields
+					Being Audited [DIAUDITED FIELDS]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Data
+					Dictionaries Being Audited [DIAUDIT DD]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Purge
+					Data Audits [DIAUDIT PURGE DATA]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Purge
+					DD Audits [DIAUDIT PURGE DD]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Turn
+					Data Audit On/Off [DIAUDIT TURN ON/OFF]</font></font></p>
+				</ul>
+			</td>
+			<td width="402" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">File:
+				NEW PERSON (#200)</font></font></p>
+				<p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Multiple:
+				ACCESSIBLE FILE (#32)</font></font></p>
+				<p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Property:
+				AUDIT ACCESS (#6)</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">DATA
+				DICTIONARY<br/>
+&quot;DD&quot;</font></font></p>
+			</td>
+			<td width="588" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				DATA DICTIONARY security property controls who has access to
+				modify the data dictionary. Examples of the VA FileMan options
+				that this property controls are as follows:</font></font> </font></font></p>
+				<ul>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Modify
+					File Attributes [DIMODIFY]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Utility
+					Functions [DIUTILITY]/(Data Dictionary [DIDDU])</font></font></p>
+				</ul>
+			</td>
+			<td width="402" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">File:
+				NEW PERSON (#200)</font></font></p>
+				<p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Multiple:
+				ACCESSIBLE FILE (#32)</font></font></p>
+				<p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Property:
+				DATA DICTIONARY ACCESS (#1)</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">DELETE
+				&quot;DEL&quot;</font></font></p>
+			</td>
+			<td width="588" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				DELETE security property controls who can delete an existing
+				record that is contained within the file. Examples of the VA
+				FileMan options that this property controls are as follows:</font></font>
+				</font></font></p>
+				<ul>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Enter
+					or Edit File Entries [DIEDIT]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Transfer
+					Entries [DITRANSFER]</font></font></p>
+				</ul>
+			</td>
+			<td width="402" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">File:
+				NEW PERSON (#200)</font></font></p>
+				<p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Multiple:
+				ACCESSIBLE FILE (#32)</font></font></p>
+				<p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Property:
+				DELETE ACCESS (#2)</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">LAYGO</font></font></p>
+			</td>
+			<td width="588" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				LAYGO (Learn As You Go) security property controls who can add a
+				new record to the file. Examples of the VA FileMan options that
+				this property controls are as follows:</font></font> </font></font></p>
+				<ul>
+					<li><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Enter
+					or Edit File Entries [DIEDIT]</font></font></p>
+				</ul>
+				<p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.21cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">NOTE:
+				You must have LAYGO as well as WRITE access to a file to add new
+				entries. Additionally, you must have WRITE access at the field
+				level for all required identifier fields.</font></font></p>
+			</td>
+			<td width="402" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">File:
+				NEW PERSON (#200)</font></font></p>
+				<p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Multiple:
+				ACCESSIBLE FILE (#32)</font></font></p>
+				<p class="western" style="page-break-inside: avoid; orphans: 0; widows: 0; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Property:
+				LAYGO ACCESS (#3)</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">READ
+				&quot;RD&quot;</font></font></p>
+			</td>
+			<td width="588" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				READ security property controls who has access to read data
+				contained within a file. Examples of the VA FileMan options that
+				this property controls are as follows:</font></font> </font></font></p>
+				<ul>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Print
+					File Entries [DIPRINT]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Search
+					File Entries [DISEARCH]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Inquire
+					to File Entries [DIINQUIRE]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Statistics
+					[DISTATISTICS], List File Attributes [DILIST]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Transfer
+					File Entries [DITRANSFER]  (transfer-from file)</font></font></p>
+				</ul>
+			</td>
+			<td width="402" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">File:
+				NEW PERSON (#200)</font></font></p>
+				<p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Multiple:
+				ACCESSIBLE FILE (#32)</font></font></p>
+				<p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Property:
+				READ ACCESS (#4) </font></font>
+				</p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="160" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">WRITE
+				&quot;WR&quot;</font></font></p>
+			</td>
+			<td width="588" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Times New Roman, serif"><font size="2" style="font-size: 11pt"><font face="Arial, serif"><font size="2" style="font-size: 10pt">The
+				WRITE security property controls who can alter data in an
+				existing record that is contained within the file. Examples of
+				the VA FileMan options that this property controls are as
+				follows:</font></font> </font></font></p>
+				<ul>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Enter
+					or Edit File Entries [DIEDIT]</font></font></p>
+					<li><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+					<font face="Arial, serif"><font size="2" style="font-size: 10pt">Transfer
+					[File] Entries [DITRANSFER] (transfer-to file)</font></font></p>
+				</ul>
+			</td>
+			<td width="402" style="background: transparent; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">File:
+				NEW PERSON (#200)</font></font></p>
+				<p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Multiple:
+				ACCESSIBLE FILE (#32)</font></font></p>
+				<p class="western" style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Property:
+				WRITE ACCESS (#5)</font></font></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p align="center" style="margin-top: 0.21cm"><a name="_Toc172441714"></a><a name="_Ref168826234"></a>
+<font face="Times New Roman, serif"><b>Table 4: File level security
+properties in Kernel File Access Security</b></font></p>
+<p class="western"><br/>
+
+</p>
+<p class="western"></p>
+<div id="TextSection" dir="ltr">
+	<ol>
+		<ol start="5"><li><h2 class="western">Index</h2>
+		</ol>
+	</ol>
+	<p class="western"><br/>
+
+	</p>
+	<div id="Alphabetical Index1" dir="ltr" gutter="94" style="column-count: 2"><p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>A</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">ACCESSIBLE
+		FILE multiple (#32), 10</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Adobe
+		Acrobat Reader, x</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Anonymous
+		Directories, xi</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Approved
+		Application Abbreviations, x</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">AUDIT
+		security properties, 7, 10</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>C</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Classic
+		VA FileMan APIs, 1</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Classic
+		VA FileMan file access security, 3, 7, 12</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Is
+		Your Site Using Classic VA FileMan File Access Security?, 7</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Security
+		Access and Properties, 7</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Contents,
+		v</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>D</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Data
+		Dictionary</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Data
+		Dictionary Utilities Menu, xi, 3</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Listings,
+		xi</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">DATA
+		DICTIONARY security properties, 8, 10</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Database
+		Server (DBS) APIs, 1</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">DELETE
+		&quot;DEL&quot; security properties, 8, 11</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Document
+		History, iii</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Documentation
+		Symbols, ix</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">DUZ(0)=&quot;@&quot;,
+		1</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>E</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">EVS
+		Anonymous Directories, xi</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>F</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Figures,
+		vii</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">File
+		Access Security</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Classic
+		VA FileMan file access security, 3, 7, 12</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Kernel
+		File Access Security, 3, 10, 12</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Security
+		Access and Properties, 7, 10</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">file
+		access security via Classic FileMan APIs</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">at-sign
+		(@), 1</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">caret
+		(^), 1</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">File
+		Access Security, VA FileMan Symbols Used to Implement, 1</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">File
+		Level Security Properties, 7, 10</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">FILE
+		MANAGER ACCESS CODE field (#3), 1</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">FileMan</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Classic
+		VA FileMan APIs, 1</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Database
+		Server (DBS), 1</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">symbols
+		used to implement file access security, 1</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">VistA's
+		database management system, 1</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">FILEMANAGER
+		ACCESS CODE field (#3), 7</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">FTP
+		directories, xi</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>H</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">How
+		to</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Obtain
+		Technical Information Online, xi</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">How
+		to Use this Manual, ix</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>I</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Introduction,
+		1</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Is
+		Your Site Using Classic VA FileMan File Access Security?, 7</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Is
+		Your Site Using Kernel File Access Security?, 10</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>K</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Kernel
+		File Access Security, 3, 10, 12</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">DI
+		DDU, 3</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Is
+		Your Site Using Kernel File Access Security?, 10</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Security
+		Access and Properties, 10</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">VA
+		FileMan Data Dictionary Utilities, 3</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">XUFILEACCESS,
+		3</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>L</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">LAYGO
+		security properties, 8, 11</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">List
+		File Attributes Option, xi, 3</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>M</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">menu
+		text</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">List
+		File Attributes, xi, 3</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>N</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">NEW
+		PERSON file (#200)</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">ACCESSIBLE
+		FILE multiple (#32), 10</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">FILE
+		MANAGER ACCESS CODE field (#3), 1</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>O</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Online</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Technical
+		Information, How to Obtain, xi</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Orientation,
+		ix</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">conventions
+		for displaying TEST data, ix</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">EVS
+		Anonymous Directories, xi</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>P</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">patient
+		&amp; user names</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">test
+		data, ix</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Programmer
+		access</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">DUZ(0)=&quot;@&quot;,
+		1</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>R</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">READ
+		&quot;RD&quot; security properties, 8, 11</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Reference
+		Materials, x</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Revision
+		History, iii</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>S</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">security
+		properties</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">AUDIT,
+		7, 10</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">DATA
+		DICTIONARY, 8, 10</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">DELETE
+		&quot;DEL&quot;, 8, 11</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">LAYGO,
+		8, 11</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">READ
+		&quot;RD&quot;, 8, 11</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">WRITE
+		&quot;WR&quot;, 9, 11</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Social
+		Security Numbers</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">test
+		data, ix</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Symbols
+		Found in the Documentation, ix</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>T</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">test
+		data</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">patient
+		&amp; user names, ix</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Social
+		Security Numbers, ix</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>V</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">VA
+		FileMan file access security, Classic, 3, 7, 12</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Is
+		Your Site Using Classic VA FileMan File Access Security?, 7</font></font></p>
+		<p style="margin-left: 0.78cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Security
+		Access and Properties, 7</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">VA
+		FileMan Symbols Used to Implement File Access Security, 1</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">VistA's
+		database management system, FileMan, 1</font></font></p>
+		<p style="margin-left: 0.25cm; margin-top: 0.42cm; margin-bottom: 0.21cm; page-break-after: avoid">
+		<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>W</b></font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">Who
+		Should Read this Manual?, x</font></font></p>
+		<p style="margin-left: 0.39cm; text-indent: -0.39cm"><font face="Times New Roman, serif"><font size="2" style="font-size: 9pt">WRITE
+		&quot;WR&quot; security properties, 9, 11</font></font></p>
+	</div>
+	<p class="western"><br/>
+
+	</p>
+</div>
+<div title="footer"><p style="orphans: 0; widows: 0; margin-top: 1.17cm">
+	<br/>
+
+	</p>
+</div>
+</body>
+</html>

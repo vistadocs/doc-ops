@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title>FileMan 22.2 Installation Guide</title>
+	<meta name="generator" content="LibreOffice 7.3.4.2 (MacOSX)"/>
+	<meta name="author" content="Department of Veterans Affairs"/>
+	<meta name="created" content="2021-03-15T16:24:00"/>
+	<meta name="changedby" content="Department of Veterans Affairs"/>
+	<meta name="changed" content="2021-03-15T16:24:00"/>
+	<meta name="AppVersion" content="16.0000"/>
+	<meta name="Company" content="Department of Veterans Affairs"/>
+	<meta name="ContentTypeId" content="0x010100BC0D9D7322FAB64595A58FD36A14C46D"/>
+	<meta name="_dlc_DocId" content="657KNE7CTRDA-7077-904"/>
+	<meta name="_dlc_DocIdItemGuid" content="73d6d80f-9b8f-4efd-b363-d38a08475838"/>
+	<meta name="_dlc_DocIdUrl" content="http://vaww.oed.portal.va.gov/pm/hppmd/fm222iwg/_layouts/DocIdRedir.aspx?ID=657KNE7CTRDA-7077-904, 657KNE7CTRDA-7077-904"/>
+	<style type="text/css">
+		@page { size: 21.59cm 27.94cm; margin-left: 2.54cm; margin-right: 2.54cm; margin-top: 2.54cm; margin-bottom: 1.27cm }
+		@page:first { margin-top: 2.54cm; margin-bottom: 2.54cm }
+		p { color: #000000; text-align: left; orphans: 2; widows: 2; margin-top: 0.21cm; margin-bottom: 0.21cm; direction: ltr; background: transparent }
+		p.western { font-family: "Times New Roman", serif; font-size: 12pt }
+		p.cjk { font-family: "Batang"; font-size: 12pt; so-language: ko-KR }
+		p.ctl { font-size: 12pt }
+		h1 { color: #000000; text-align: left; page-break-inside: avoid; orphans: 2; widows: 2; margin-left: 1.27cm; text-indent: -1.27cm; margin-top: 0cm; margin-bottom: 0.21cm; direction: ltr; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Arial", serif; font-size: 18pt; font-weight: bold }
+		h1.cjk { font-family: "Batang"; font-size: 18pt; so-language: ko-KR; font-weight: bold }
+		h1.ctl { font-family: "Arial"; font-size: 18pt; font-weight: bold }
+		h2 { color: #000000; text-align: left; page-break-inside: avoid; orphans: 2; widows: 2; margin-left: 1.27cm; text-indent: -1.27cm; margin-top: 0.21cm; margin-bottom: 0.21cm; direction: ltr; background: transparent; page-break-after: avoid }
+		h2.western { font-family: "Arial", serif; font-size: 16pt; font-weight: bold }
+		h2.cjk { font-family: "Batang"; font-size: 16pt; so-language: ko-KR; font-weight: bold }
+		h2.ctl { font-family: "Arial"; font-size: 16pt; font-style: italic; font-weight: bold }
+		h3 { color: #000000; text-align: left; page-break-inside: avoid; orphans: 2; widows: 2; margin-left: 1.59cm; text-indent: -1.59cm; margin-top: 0.21cm; margin-bottom: 0.21cm; direction: ltr; background: transparent; page-break-after: avoid }
+		h3.western { font-family: "Arial", serif; font-size: 14pt; font-weight: bold }
+		h3.cjk { font-family: "Batang"; font-size: 14pt; so-language: ko-KR; font-weight: bold }
+		h3.ctl { font-family: "Arial"; font-size: 14pt; font-weight: bold }
+		th p { color: #000000; text-align: left; page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; margin-bottom: 0.11cm; direction: ltr; background: transparent; page-break-after: avoid }
+		th p.western { font-family: "Arial", serif; font-weight: bold }
+		th p.cjk { font-weight: bold }
+		p.caution-western { font-family: "Arial", serif; font-size: 10pt; font-weight: bold; margin-left: 1.6cm; text-indent: -1.6cm }
+		p.caution-cjk { font-size: 10pt; font-weight: bold; margin-left: 1.6cm; text-indent: -1.6cm }
+		p.caution-ctl { font-family: "Arial"; font-size: 10pt; margin-left: 1.6cm; text-indent: -1.6cm }
+		a:visited { color: #800080; text-decoration: underline }
+		a:link { color: #0000ff; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" text="#000000" link="#0000ff" vlink="#800080" dir="ltr"><p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm">
+<font face="Arial, serif"><font size="5" style="font-size: 18pt"><b>VA
+FileMan 22.2</b></font></font></p>
+<p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm"><font face="Arial, serif"><font size="5" style="font-size: 18pt"><b>Installation,
+Back-Out, and Rollback Guide</b></font></font></p>
+<p align="center" style="margin-top: 1.69cm; margin-bottom: 1.69cm"><img src="installation-rollback_html_2da7cf5f440153c6.jpg" name="image19.jpg" align="bottom" width="447" height="447" border="0"/>
+</p>
+<p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>August
+2016</b></font></font></p>
+<p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm"><br/>
+<br/>
+
+</p>
+<p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>Department
+of Veterans Affairs (VA)</b></font></font></p>
+<p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>Office
+of Information and Technology (OI&amp;T)</b></font></font></p>
+<p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>Enterprise
+Program Management Office (EPMO)</b></font></font></p>
+<p class="western"><br/>
+<br/>
+
+</p>
+<p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm; page-break-before: always">
+<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>Revision
+History</b></font></font></p>
+<p style="margin-left: 1.27cm; text-indent: -1.27cm"><img src="installation-rollback_html_8f4c4f469c39ded4.png" name="Picture 1" alt="Note" align="bottom" width="63" height="63" border="0"/>
+<b>	NOTE</b>:
+The revision history cycle begins once changes or enhancements are
+requested after the Installation, Back-Out, and Rollback Guide has
+been baselined.</p>
+<table width="100%" cellpadding="14" cellspacing="0">
+	<col width="46*"/>
+
+	<col width="29*"/>
+
+	<col width="118*"/>
+
+	<col width="63*"/>
+
+	<thead>
+		<tr valign="top">
+			<th width="18%" bgcolor="#f2f2f2" style="background: #f2f2f2; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0">
+				Date</p>
+			</th>
+			<th width="11%" bgcolor="#f2f2f2" style="background: #f2f2f2; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0">
+				Version</p>
+			</th>
+			<th width="46%" bgcolor="#f2f2f2" style="background: #f2f2f2; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0">
+				Description</p>
+			</th>
+			<th width="24%" bgcolor="#f2f2f2" style="background: #f2f2f2; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" style="orphans: 0; widows: 0">
+				Author</p>
+			</th>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+	</thead>
+	<tbody>
+		<tr valign="top">
+			<td width="18%" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">08/03/2016</font></font></p>
+			</td>
+			<td width="11%" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">1.0</font></font></p>
+			</td>
+			<td width="46%" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p style="orphans: 0; widows: 0; margin-top: 0.11cm; margin-bottom: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Initial
+				release of VA FileMan 22.2 Installation, Back-Out, and Rollback
+				Guide.</font></font></p>
+				<p style="orphans: 0; widows: 0; margin-top: 0.11cm"><font face="Arial, serif"><font size="2" style="font-size: 10pt">Based
+				on the ProPath Installation, Back-Out, and Rollback Guide
+				template; released February 2016; Version 2.1.</font></font></p>
+			</td>
+			<td width="24%" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p style="orphans: 0; widows: 0; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">VA
+				FileMan 22.2 Development Team</font></font></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p class="western" style="margin-top: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm; page-break-before: always">
+<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>Table
+of Contents</b></font></font></p>
+<div id="Table of Contents1" dir="ltr"><p style="page-break-inside: avoid; margin-left: 0.96cm; text-indent: -0.96cm; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b><a href="#_Toc458001705">1</a></b><a href="#_Toc458001705"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001705">Introduction</a><a href="#_Toc458001705">	1</a></b></font></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001706">1.1</a></b><a href="#_Toc458001706"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001706">MUMPS
+	OPERATING SYSTEM File Considerations</a><a href="#_Toc458001706">	1</a></b></font></p>
+	<p style="page-break-inside: avoid; margin-left: 0.96cm; text-indent: -0.96cm; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b><a href="#_Toc458001707">2</a></b><a href="#_Toc458001707"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001707">Pre-installation
+	and System Requirements</a><a href="#_Toc458001707">	3</a></b></font></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001708">2.1</a></b><a href="#_Toc458001708"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001708">Back
+	Up System</a><a href="#_Toc458001708">	3</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001709">2.2</a></b><a href="#_Toc458001709"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001709">Platform
+	Installation and Preparation</a><a href="#_Toc458001709">	3</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001710">2.3</a></b><a href="#_Toc458001710"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001710">Download
+	and Extract Files</a><a href="#_Toc458001710">	3</a></b></font></p>
+	<p style="margin-left: 2.87cm; text-indent: -1.6cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><a href="#_Toc458001711">2.3.1</a><a href="#_Toc458001711"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt">	</font></font></font></a><a href="#_Toc458001711">Software</a><a href="#_Toc458001711">	3</a></font></p>
+	<p style="margin-left: 2.87cm; text-indent: -1.6cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><a href="#_Toc458001712">2.3.2</a><a href="#_Toc458001712"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt">	</font></font></font></a><a href="#_Toc458001712">Documentation</a><a href="#_Toc458001712">	3</a></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001713">2.4</a></b><a href="#_Toc458001713"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001713">Installation
+	Scripts</a><a href="#_Toc458001713">	4</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001714">2.5</a></b><a href="#_Toc458001714"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001714">Cron
+	Scripts</a><a href="#_Toc458001714">	4</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001715">2.6</a></b><a href="#_Toc458001715"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001715">Access
+	Requirements and Skills Needed for the Installation</a><a href="#_Toc458001715">	4</a></b></font></p>
+	<p style="page-break-inside: avoid; margin-left: 0.96cm; text-indent: -0.96cm; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b><a href="#_Toc458001716">3</a></b><a href="#_Toc458001716"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001716">Installation
+	Procedure</a><a href="#_Toc458001716">	5</a></b></font></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001717">3.1</a></b><a href="#_Toc458001717"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001717">Log
+	onto the System</a><a href="#_Toc458001717">	5</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001718">3.2</a></b><a href="#_Toc458001718"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001718">Check
+	the Current VA FileMan Version</a><a href="#_Toc458001718">	5</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001719">3.3</a></b><a href="#_Toc458001719"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001719">Production
+	Environment: Shut Down System</a><a href="#_Toc458001719">	5</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001720">3.4</a></b><a href="#_Toc458001720"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001720">Production
+	Environment: Restart System</a><a href="#_Toc458001720">	5</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001721">3.5</a></b><a href="#_Toc458001721"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001721">Production
+	Environment: Inhibit Logons for Each Volume Set</a><a href="#_Toc458001721">	5</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001722">3.6</a></b><a href="#_Toc458001722"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001722">Environment
+	Check</a><a href="#_Toc458001722">	6</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001723">3.7</a></b><a href="#_Toc458001723"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001723">Production
+	Environment: Load the VA FileMan 22.2 Distribution</a><a href="#_Toc458001723">	6</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001724">3.8</a></b><a href="#_Toc458001724"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001724">Install
+	the VA FileMan 22.2 Package</a><a href="#_Toc458001724">	8</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001725">3.9</a></b><a href="#_Toc458001725"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001725">Post-Install
+	TaskMan Procedures</a><a href="#_Toc458001725">	11</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001726">3.10</a></b><a href="#_Toc458001726"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001726">Production
+	Environment: Enable Logons</a><a href="#_Toc458001726">	11</a></b></font></p>
+	<p style="page-break-inside: avoid; margin-left: 0.96cm; text-indent: -0.96cm; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b><a href="#_Toc458001727">4</a></b><a href="#_Toc458001727"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001727">Implementation
+	Procedure</a><a href="#_Toc458001727">	12</a></b></font></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001728">4.1</a></b><a href="#_Toc458001728"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001728">Database
+	Tuning</a><a href="#_Toc458001728">	12</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001729">4.2</a></b><a href="#_Toc458001729"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001729">Verify
+	Installation</a><a href="#_Toc458001729">	12</a></b></font></p>
+	<p style="page-break-inside: avoid; margin-left: 0.96cm; text-indent: -0.96cm; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b><a href="#_Toc458001730">5</a></b><a href="#_Toc458001730"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001730">Back-Out
+	Plan</a><a href="#_Toc458001730">	12</a></b></font></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001731">5.1</a></b><a href="#_Toc458001731"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001731">Back-Out
+	Strategy</a><a href="#_Toc458001731">	12</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001732">5.2</a></b><a href="#_Toc458001732"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001732">Back-Out
+	Considerations</a><a href="#_Toc458001732">	12</a></b></font></p>
+	<p style="margin-left: 2.87cm; text-indent: -1.6cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><a href="#_Toc458001733">5.2.1</a><a href="#_Toc458001733"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt">	</font></font></font></a><a href="#_Toc458001733">Load
+	Testing</a><a href="#_Toc458001733">	12</a></font></p>
+	<p style="margin-left: 2.87cm; text-indent: -1.6cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><a href="#_Toc458001734">5.2.2</a><a href="#_Toc458001734"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt">	</font></font></font></a><a href="#_Toc458001734">User
+	Acceptance Testing</a><a href="#_Toc458001734">	12</a></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001735">5.3</a></b><a href="#_Toc458001735"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001735">Back-Out
+	Criteria</a><a href="#_Toc458001735">	12</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001736">5.4</a></b><a href="#_Toc458001736"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001736">Back-Out
+	Risks</a><a href="#_Toc458001736">	12</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001737">5.5</a></b><a href="#_Toc458001737"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001737">Authority
+	for Back-Out</a><a href="#_Toc458001737">	13</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001738">5.6</a></b><a href="#_Toc458001738"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001738">Back-Out
+	Procedure</a><a href="#_Toc458001738">	13</a></b></font></p>
+	<p style="page-break-inside: avoid; margin-left: 0.96cm; text-indent: -0.96cm; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	<font face="Arial, serif"><font size="4" style="font-size: 14pt"><b><a href="#_Toc458001739">6</a></b><a href="#_Toc458001739"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001739">Rollback
+	Plan</a><a href="#_Toc458001739">	13</a></b></font></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001740">6.1</a></b><a href="#_Toc458001740"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001740">Rollback
+	Considerations</a><a href="#_Toc458001740">	13</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001741">6.2</a></b><a href="#_Toc458001741"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001741">Rollback
+	Criteria</a><a href="#_Toc458001741">	13</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001742">6.3</a></b><a href="#_Toc458001742"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001742">Rollback
+	Risks</a><a href="#_Toc458001742">	13</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001743">6.4</a></b><a href="#_Toc458001743"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001743">Authority
+	for Rollback</a><a href="#_Toc458001743">	13</a></b></font></p>
+	<p style="margin-left: 1.93cm; text-indent: -1.29cm; margin-top: 0.07cm; margin-bottom: 0.07cm">
+	<font face="Arial, serif"><b><a href="#_Toc458001744">6.5</a></b><a href="#_Toc458001744"><font color="#000000"><font face="Calibri, serif"><font size="2" style="font-size: 11pt"><span style="font-weight: normal">	</span></font></font></font></a><b><a href="#_Toc458001744">Rollback
+	Procedure</a><a href="#_Toc458001744">	13</a></b></font></p>
+</div>
+<p class="western"><br/>
+<br/>
+
+</p>
+<p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>List
+of Figures</b></font></font></p>
+<div id="Table of Figures1" dir="ltr"><p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-bottom: 0cm">
+	<a href="#_Toc458001745">Figure 1: Check the Current VA FileMan
+	Version</a><a href="#_Toc458001745">	5</a></p>
+	<p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-bottom: 0cm">
+	<a href="#_Toc458001746">Figure 2: Inhibit Logons for Each Volume
+	Set</a><a href="#_Toc458001746">	6</a></p>
+	<p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-bottom: 0cm">
+	<a href="#_Toc458001747">Figure 3: load the VA FileMan 22.2
+	distribution file</a><a href="#_Toc458001747">	7</a></p>
+	<p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-bottom: 0cm">
+	<a href="#_Toc458001748">Figure 4: Sample installation dialogue</a><a href="#_Toc458001748">	8</a></p>
+	<p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-bottom: 0cm">
+	<a href="#_Toc458001749">Figure 5: Enable Logons</a><a href="#_Toc458001749">	11</a></p>
+</div>
+<p class="western"><br/>
+<br/>
+
+</p>
+<p align="center" style="margin-top: 0cm; margin-bottom: 0.64cm"><font face="Arial, serif"><font size="4" style="font-size: 14pt"><b>List
+of Tables</b></font></font></p>
+<div id="Table of Figures2" dir="ltr"><p style="margin-left: 0.79cm; text-indent: -0.79cm; margin-bottom: 0cm">
+	<a href="#_Toc458001750">Table 1: VA FileMan 22.2 Documentation</a><a href="#_Toc458001750">	3</a></p>
+</div>
+<p class="western"><br/>
+<br/>
+
+</p>
+<p class="western"><br/>
+<br/>
+
+</p>
+<ol>
+	<li><h1 class="western" style="text-indent: 0cm; page-break-before: always"><a name="_Toc458001705"></a>
+	Introduction</h1>
+</ol>
+<p class="western">This guide provides instructions for installing
+Department of Veterans Affairs (VA) FileMan 22.2. VA FileMan is
+designed to be used either with the Kernel or as a standalone
+application; however, these installation instructions are provided
+only for sites running Kernel 8.0. Since Kernel is dependent on VA
+FileMan 22.0, that version of VA FileMan is already installed on your
+system.</p>
+<p class="western">This guide is written specifically for the Caché
+Operating System (OS). It does not contain OS-specific instructions
+for other OSs, such as routing mapping and manually moving %routines
+into the Manager account.</p>
+<p style="margin-left: 1.27cm; text-indent: -1.27cm"><img src="installation-rollback_html_8f4c4f469c39ded4.png" name="Image1" alt="Note" align="bottom" width="63" height="63" border="0"/>
+	<b>REF:</b>
+For identifying other OSs to VA FileMan and Kernel, see Section <font color="#0000ff"><u>1.1</u></font>.</p>
+<p class="western">This installation is significantly different from
+previous versions. You no longer must manually move the new VA
+FileMan routines into the account. The routines are present in the
+Kernel Installation &amp; Distribution System (KIDS) build and are
+loaded as part of the install. DINIT is run <i>non</i>-interactively
+during the KIDS pre-install to update the VA FileMan files.</p>
+<p class="western">After this installation, the current version of
+the VA FileMan files will be installed and updated with data as
+appropriate.</p>
+<p class="caution-western"><img src="installation-rollback_html_71fdb0d04673f42f.png" name="Picture 92" alt="Caution" align="bottom" width="84" height="84" border="0"/>
+	CAUTION:
+Do <i>not</i> run DINIT to update the VA FileMan files after the
+install is complete. Running DINIT from the Command line at any time
+will cause data corruption.</p>
+<ol>
+	<ol>
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001706"></a><a name="_Ref457899521"></a>
+		MUMPS OPERATING SYSTEM File Considerations</h2>
+	</ol>
+</ol>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+This Install, Back-Out, and Rollback Guide assumes an install on
+Caché. You are not asked to identify your OS during the install.</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+VA FileMan 22.2 populates the MUMPS OPERATING SYSTEM file (#.7) with
+values for the following operating systems:</p>
+<ul>
+	<li><p style="page-break-inside: avoid; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	CACHE/OpenM</p>
+	<li><p style="page-break-inside: avoid; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	DSM for OpenVMS</p>
+	<li><p style="page-break-inside: avoid; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	DTM-PC</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">GT.M(UNIX)</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">GT.M(VAX)</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">MSM</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">OTHER—This
+	placeholder is for a user defined OS</p>
+</ul>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+In order to notify VA FileMan that you are using an OS other than
+Cache after the install completes enter the following command to
+identify your OS:</p>
+<p style="page-break-inside: avoid; margin-left: 0.64cm; margin-right: 0.33cm; margin-top: 0.11cm; margin-bottom: 0.11cm; border: none; padding: 0cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">&gt;<b>D
+OS^DINIT</b></font></font></p>
+<p style="margin-left: 3.18cm; margin-top: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+In order to complete the identification to Kernel that you are
+running an OS other than Cache, run the appropriate routine from the
+following list:</p>
+<p style="page-break-inside: avoid; margin-left: 0.64cm; margin-right: 0.33cm; margin-top: 0.11cm; margin-bottom: 0.11cm; border: none; padding: 0cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">ZOSFGTM&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+GTM on VMS</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.64cm; margin-right: 0.33cm; margin-top: 0.11cm; margin-bottom: 0.11cm; border: none; padding: 0cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">ZOSFGUX&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+GTM on Unix</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.64cm; margin-right: 0.33cm; margin-top: 0.11cm; margin-bottom: 0.11cm; border: none; padding: 0cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">ZOSFONT&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.64cm; margin-right: 0.33cm; margin-top: 0.11cm; margin-bottom: 0.11cm; border: none; padding: 0cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">ZOSFVXD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;DSM
+on VMS</font></font></p>
+<p class="western"><br/>
+<br/>
+
+</p>
+<h1 class="western" style="margin-left: 0.96cm; text-indent: -0.96cm; page-break-before: always"><a name="_Toc458001707"></a><a name="_Toc457395486"></a>
+Pre-installation and System Requirements</h1>
+<ol>
+	<ol start="2">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc442962347"></a><a name="_Toc447537758"></a><a name="_Toc458001708"></a><a name="_Ref457915305"></a>
+		Back Up System</h2>
+	</ol>
+</ol>
+<p class="western"><a name="_Toc442962348"></a><a name="_Ref436642459"></a>
+Back up your system as a safeguard <i>before</i> the installation. In
+order to back out the VA FileMan 22.2 installation, restore your back
+up (see the “<font color="#0000ff"><u>Back-Out Plan</u></font>”
+section).</p>
+<ol>
+	<ol start="3">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc442962346"></a><a name="_Toc458001709"></a>
+		Platform Installation and Preparation</h2>
+	</ol>
+</ol>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+VA FileMan 22.2 requires pre-existing Kernel 8.0 software.</p>
+<p class="western"><a name="_Toc442962349"></a>Patches DI*22.2*1 <i>and</i>
+HL7*1.6*167 resolve a known VA FileMan (FM) 22.2 issue, SDM I9259370.
+User cannot select HL7 messages directly from the list in the HL View
+Transmission Log option. For ease of installation, sites may delay
+installing FM 22.2 until release of patches DI*22.2*1 and
+HL7*1.6*167; both patches will be released shortly. Although the two
+patches can be installed while users are on the system, installing
+both patches right after installing FM 22.2, before allowing users
+back on the system, is more efficient and will eliminate any possible
+errors.</p>
+<ol>
+	<ol start="4">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001710"></a>
+		Download and Extract Files</h2>
+	</ol>
+</ol>
+<p class="western">Software being released as a Kernel Installation
+and Distribution System (KIDS) file and documentation describing the
+new functionality introduced by this patch is available.</p>
+<ol>
+	<ol>
+		<ol>
+			<li><h3 class="western" style="text-indent: 0cm"><a name="_Toc458001711"></a>
+			Software</h3>
+		</ol>
+	</ol>
+</ol>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+Software can be downloaded from the Product Support (PS) Anonymous
+Directories via Secure File Transfer Protocol (SFTP).</p>
+<p class="western">Download the VA_FILEMAN_22_2.KID file from the
+appropriate server to a directory on your system.</p>
+<ol>
+	<ol>
+		<ol start="2">
+			<li><h3 class="western" style="text-indent: 0cm"><a name="_Toc458001712"></a>
+			Documentation</h3>
+		</ol>
+	</ol>
+</ol>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+Documentation can be downloaded from the Product Support (PS)
+Anonymous Directories via Secure File Transfer Protocol (SFTP).</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+Documentation can also be found on the VA Software Document Library
+(VDL) at: <font color="#0000ff"><u><a href="http://www.va.gov/vdl/application.asp?appid=5" target="A Software Document Library (VDL): VA FileMan Documentation">http://www.va.gov/vdl/application.asp?appid=5</a></u></font>
+</p>
+<p align="center" style="page-break-inside: avoid; margin-bottom: 0.11cm; page-break-after: avoid"><a name="_Toc458001750"></a><a name="_Toc457395538"></a>
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Table
+1: VA FileMan 22.2 Documentation</b></font></font></p>
+<table width="1231" cellpadding="14" cellspacing="0">
+	<col width="307"/>
+
+	<col width="195"/>
+
+	<col width="643"/>
+
+	<thead>
+		<tr valign="top">
+			<th width="307" bgcolor="#dfdfdf" style="background: #dfdfdf; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" align="left" style="orphans: 2; widows: 2">
+				<font size="2" style="font-size: 10pt">File Name</font></p>
+			</th>
+			<th width="195" bgcolor="#dfdfdf" style="background: #dfdfdf; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" align="left" style="orphans: 2; widows: 2">
+				<font size="2" style="font-size: 10pt">FTP Mode</font></p>
+			</th>
+			<th width="643" bgcolor="#dfdfdf" style="background: #dfdfdf; border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p class="western" align="left" style="orphans: 2; widows: 2">
+				<font size="2" style="font-size: 10pt">Description</font></p>
+			</th>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+	</thead>
+	<tbody>
+		<tr valign="top">
+			<td width="307" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">fm22_2um1.pdf</font></font></p>
+			</td>
+			<td width="195" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Binary</font></font></p>
+			</td>
+			<td width="643" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">VA
+				FileMan 22.2 User Manual</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="307" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">fm22_2um2.pdf</font></font></p>
+			</td>
+			<td width="195" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Binary</font></font></p>
+			</td>
+			<td width="643" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">VA
+				FileMan 22.2 Advanced User Manual</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="307" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">fm22_2dg.pdf</font></font></p>
+			</td>
+			<td width="195" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Binary</font></font></p>
+			</td>
+			<td width="643" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">VA
+				FileMan 22.2 Developer’s Guide</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="307" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">fm22_2ig.pdf</font></font></p>
+			</td>
+			<td width="195" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Binary</font></font></p>
+			</td>
+			<td width="643" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="page-break-inside: avoid; orphans: 2; widows: 2; margin-top: 0.11cm; page-break-after: avoid">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">VA
+				FileMan 22.2 Installation, Back-Out, and Rollback Guide</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="307" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="orphans: 2; widows: 2; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">fm22_2tm.pdf</font></font></p>
+			</td>
+			<td width="195" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="orphans: 2; widows: 2; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Binary</font></font></p>
+			</td>
+			<td width="643" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="orphans: 2; widows: 2; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">VA
+				FileMan 22.2 Technical Manual</font></font></p>
+			</td>
+		</tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr></tr>
+		<tr valign="top">
+			<td width="307" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="orphans: 2; widows: 2; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">fm22_2rn.pdf</font></font></p>
+			</td>
+			<td width="195" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="orphans: 2; widows: 2; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">Binary</font></font></p>
+			</td>
+			<td width="643" style="border: 0.50pt solid #000000; padding: 0cm 0.19cm"><p align="left" style="orphans: 2; widows: 2; margin-top: 0.11cm">
+				<font face="Arial, serif"><font size="2" style="font-size: 10pt">VA
+				FileMan 22.2 Release Notes</font></font></p>
+			</td>
+		</tr>
+	</tbody>
+</table>
+<p style="margin-left: 3.18cm; margin-top: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<ol>
+	<ol start="5">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001713"></a>
+		Installation Scripts</h2>
+	</ol>
+</ol>
+<p class="western"><a name="_Toc442962350"></a>There are no
+installation scripts for VA FileMan 22.2.</p>
+<ol>
+	<ol start="6">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001714"></a>
+		Cron Scripts</h2>
+	</ol>
+</ol>
+<p class="western"><a name="_Toc442962351"></a>There are no cron
+scripts for the VA FileMan 22.2.</p>
+<ol>
+	<ol start="7">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001715"></a>
+		Access Requirements and Skills Needed for the Installation</h2>
+	</ol>
+</ol>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+Only those with system management knowledge and access should install
+VA FileMan 22.2.</p>
+<p style="page-break-inside: avoid; margin-left: 1.27cm; text-indent: -1.27cm; page-break-after: avoid">
+<img src="installation-rollback_html_8f4c4f469c39ded4.png" name="Image2" alt="Note" align="bottom" width="63" height="63" border="0"/>
+	<b>REF:</b>
+For instructions on performing OS-level tasks, see your OS system
+management documentation.</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+The installer needs to know how to do the following:</p>
+<ul>
+	<li><p style="page-break-inside: avoid; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	Obtain Veterans Health Information Systems and Technology
+	Architecture (VistA) software from FORUM and Secure File Transfer
+	Protocol (SFTP) download sites (i.e.,&nbsp;Product Support Anonymous
+	Directories).</p>
+	<li><p style="page-break-inside: avoid; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	Run a Kernel Installation and Distribution System (KIDS)
+	installation.</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">Logging
+	onto the system and getting to the M prompt (Programmer Mode).</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">Execute
+	commands in Programmer mode when given VistA Programmer Access.</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">Running
+	system status reports.</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">Terminating
+	processes.</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">Accessing
+	host files (i.e.,&nbsp;KIDS build file).</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">Inhibiting
+	Logons.</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">Stopping
+	TaskMan.</p>
+</ul>
+<p class="western"><br/>
+<br/>
+
+</p>
+<ol start="2">
+	<li><h1 class="western" style="text-indent: 0cm; page-break-before: always"><a name="_Toc430174019"></a><a name="_Toc442962352"></a><a name="_Toc458001716"></a><a name="_Toc416250739"></a>
+	Installation Procedure</h1>
+	<ol>
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001717"></a>
+		Log onto the System</h2>
+	</ol>
+</ol>
+<p class="western">Log onto the Production account.</p>
+<ol>
+	<ol start="2">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001718"></a>
+		Check the Current VA FileMan Version</h2>
+	</ol>
+</ol>
+<p class="western">Check that current version in the PACKAGE FILE
+(#9.4) is set to <b>22.0</b>.</p>
+<p align="center" style="page-break-inside: avoid; margin-bottom: 0.11cm; page-break-after: avoid"><a name="_Toc458001745"></a>
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Figure
+1: Check the Current VA FileMan Version</b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">&gt;<b><span style="background: #ffff00">D
+P^DI</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">VA
+FileMan 22.2</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Select
+OPTION: <b><span style="background: #ffff00">1 &lt;Enter&gt;</span></b>
+ENTER OR EDIT FILE ENTRIES</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Input
+to what File: DEVICE// <b><span style="background: #ffff00">PACKAGE</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1
+  PACKAGE                          (294 entries)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">2
+  PACKAGE INTERFACE                (128 entries)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">3
+  PACKAGE SIZE                     (5182 entries)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">4
+  PACKAGE TYPE                     (529 entries)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">CHOOSE
+1-4: <b><span style="background: #ffff00">1 &lt;Enter&gt;</span></b> 
+PACKAGE                    (294 entries)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">EDIT
+WHICH FIELD: ALL// <b><span style="background: #ffff00">CURRENT
+VERSION</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">THEN
+EDIT FIELD: <b><span style="background: #ffff00">&lt;Enter&gt;</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Select
+PACKAGE NAME: <b><span style="background: #ffff00">VA FILEMAN &lt;Enter&gt;</span></b>
+      DI</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">CURRENT
+VERSION: 22.2// <b><span style="background: #ffff00">22.0</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Select
+PACKAGE NAME:</font></font></p>
+<p style="margin-left: 3.18cm; margin-top: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<ol>
+	<ol start="3">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001719"></a>
+		Production Environment: Shut Down System</h2>
+	</ol>
+</ol>
+<p class="western">In Production, shut down Caché/system using your
+regular shutdown procedures.</p>
+<ol>
+	<ol start="4">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001720"></a>
+		Production Environment: Restart System</h2>
+	</ol>
+</ol>
+<p class="western">In Production, restart Caché/system using your
+regular startup procedures.</p>
+<ul>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">Do not
+	restart TaskMan or any background filers.</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">Do not
+	allow any users back on the system.</p>
+</ul>
+<ol>
+	<ol start="5">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001721"></a>
+		Production Environment: Inhibit Logons for Each Volume Set</h2>
+	</ol>
+</ol>
+<p class="western">You can use the operating system (OS) command to
+prevent logons. Using the OS command does not cause a problem and
+allows you to work within the menu system as needed during the
+installation. Caché/OpenM sites can stop the LAT and TELNET
+services.</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+Use VA FileMan to edit the VOLUME SET file (#14.5).</p>
+<p align="center" style="page-break-inside: avoid; margin-bottom: 0.11cm; page-break-after: avoid"><a name="_Toc458001746"></a>
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Figure
+2: Inhibit Logons for Each Volume Set</b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">&gt;<b><span style="background: #ffff00">D
+Q^DI</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">VA
+FileMan 22.0</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Select
+OPTION: <b><span style="background: #ffff00">ENTER OR EDIT FILE
+ENTRIES</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">INPUT
+TO WHAT FILE:  VOLUME SET// <b><span style="background: #ffff00">14.5</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">EDIT
+WHICH FIELD:  ALL// <b><span style="background: #ffff00">INHIBIT
+LOGONS ?</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">THEN
+EDIT FIELD: <b><span style="background: #ffff00">&lt;Enter&gt;</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<span id="Frame1" dir="ltr" style="position: absolute; top: 0.04cm; width: 11.41cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-bottom: 0cm">
+	<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b><font color="#000000">Replace
+	</font><font color="#000000"><i>&lt;Production Account&gt;</i></font><font color="#000000">
+	with your active Volume Set.</font></b></font></font></p>
+</span><img src="installation-rollback_html_48f32961a39ea60a.gif" name="Shape1" alt="Shape1" align="bottom" hspace="2" vspace="21" width="851" height="64"/>
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Select
+VOLUME SET: <i><b><span style="background: #ffff00">&lt;Production
+Account&gt;</span></b></i></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">INHIBIT
+LOGONS?:  NO// <b><span style="background: #ffff00">YES</span></b></font></font></p>
+<p style="margin-left: 3.18cm; margin-top: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<ol>
+	<ol start="6">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001722"></a>
+		Environment Check</h2>
+	</ol>
+</ol>
+<p class="western">The VA FileMan 22.2 distribution includes an
+Environment Check routine (DI222ENV). It is run automatically during
+the Install. Also, you are asked if you want to run it during the
+Load of the distribution. Answer “<b>YES.</b>”</p>
+<p class="western">The Environment Check examines the status of your
+system to verify that TaskMan is stopped and that Logons are
+inhibited (see steps above). If the install is stopped because your
+system is not in the proper state, stop TaskMan and inhibit Logons.
+Then proceed with the install.</p>
+<p class="western">The Environment Check also validates the integrity
+of File #1 (the File of Files) on your system. If a zero node for an
+entry in File #1 is missing, you are notified of the offending entry
+and the install is stopped. The problem <i>must</i> be resolved
+before proceeding with the install.</p>
+<ol>
+	<ol start="7">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001723"></a>
+		Production Environment: Load the VA FileMan 22.2 Distribution</h2>
+	</ol>
+</ol>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+You are now ready to Load the Kernel Installation and Distribution
+System (KIDS) build and Install VA FileMan 22.2.</p>
+<ol>
+	<li value="1"><p style="page-break-inside: avoid; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	Use the ^XUP and Q^DI entry points to set your DUZ and set DUZ(0) to
+	&quot;<b>@</b>&quot;.</p>
+</ol>
+<ol type="a">
+	<li><p style="page-break-inside: avoid; margin-top: 0cm; margin-bottom: 0cm; page-break-after: avoid">
+	<font size="2" style="font-size: 11pt">To set DUZ when responding to
+	the Access code prompt. Press <b>Enter</b> at the OPTION prompt.</font></p>
+</ol>
+<p style="page-break-inside: avoid; margin-left: 2.54cm; margin-top: 0.11cm; margin-bottom: 0.11cm; border: none; padding: 0cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">&gt;<b>D
+^XUP</b></font></font></p>
+<ol type="a" start="2">
+	<li><p style="page-break-inside: avoid; margin-top: 0cm; margin-bottom: 0cm; page-break-after: avoid">
+	<font size="2" style="font-size: 11pt"><font size="3" style="font-size: 12pt">To
+	set DUZ(0)=&quot;</font><font size="3" style="font-size: 12pt"><b>@</b></font><font size="3" style="font-size: 12pt">&quot;</font></font></p>
+</ol>
+<p style="page-break-inside: avoid; margin-left: 2.54cm; margin-top: 0.11cm; margin-bottom: 0.11cm; border: none; padding: 0cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">&gt;<b>D
+Q^DI</b></font></font></p>
+<p style="margin-left: 3.18cm; margin-top: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<ol>
+	<li><p style="page-break-inside: avoid; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	<u><b>IMPORTANT:</b></u><b> </b>Invoke the <b>^XPDKRN</b> menu and
+	select the LOAD A DISTRIBUTION option. Enter the appropriate Host
+	file name to load the VA FileMan 22.2 distribution file
+	(FM22_0.KID).</p>
+</ol>
+<p align="center" style="page-break-inside: avoid; margin-bottom: 0.11cm; page-break-after: avoid"><a name="_Toc458001747"></a>
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Figure
+3: load the VA FileMan 22.2 distribution file</b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">&gt;<b><span style="background: #ffff00">D
+^XPDKRN</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">KIDS
+8.0</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Select
+KIDS OPTION: <b><span style="background: #ffff00">1 &lt;Enter&gt;</span></b>
+LOAD A DISTRIBUTION</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Enter
+a Host File: <b><span style="background: #ffff00">/nfsftp/FLM22/sqakids/VA_FILEMAN_22_2.KID</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">KIDS
+Distribution saved on Mar 18, 2016@16:57:48</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Comment:
+VA FileMan 22.2 KIDS Build</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">This
+Distribution contains Transport Globals for the following Package(s):</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+&nbsp;&nbsp; <font face="Courier New, serif"><font size="2" style="font-size: 9pt">VA
+FILEMAN 22.2</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Distribution
+OK!</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Want
+to Continue with Load? YES// <b><span style="background: #ffff00">&lt;Enter&gt;</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Loading
+Distribution...</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Build
+VA FILEMAN 22.2 has an Environmental Check Routine</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Want
+to RUN the Environment Check Routine? YES// <b><span style="background: #ffff00">&lt;Enter&gt;</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">VA
+FILEMAN 22.2</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Will
+first run the Environment Check Routine, DI222ENV</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Use
+INSTALL NAME: VA FILEMAN 22.2 to install this Distribution.</font></font></p>
+<p style="margin-left: 3.18cm; margin-top: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<ol>
+	<ol start="8">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001724"></a><a name="_Hlt446754849"></a>
+		Install the VA FileMan 22.2 Package</h2>
+	</ol>
+</ol>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+Invoke the ^XPDKRN menu again and select the INSTALL PACKAGE(S)
+option. Select VA FILEMAN 22.2 as the package you want to install.</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+The VA FileMan 22.2 installation takes approximately 10 minutes.</p>
+<p align="center" style="page-break-inside: avoid; margin-bottom: 0.11cm; page-break-after: avoid"><a name="_Toc458001748"></a>
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Figure
+4: Sample installation dialogue</b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">&gt;<b><span style="background: #ffff00">D
+^XPDKRN</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">KIDS
+8.0</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Select
+KIDS OPTION: <b><span style="background: #ffff00">6 &lt;Enter&gt;</span></b>
+INSTALL PACKAGE(S)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Select
+INSTALL NAME: <b><span style="background: #ffff00">VA FILEMAN 22.2
+&lt;Enter&gt;</span></b> 2/18/16@11:51:17</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+     <font face="Courier New, serif"><font size="2" style="font-size: 9pt">=&gt;
+VA FileMan 22.2 KIDS build ;Created on Feb 18, 2016@11:34</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">This
+Distribution was loaded on Feb 18, 2016@11:51:17 with header of </font></font>
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">VA
+FileMan 22.2  KIDS build  ;Created on Feb 18, 2016@11:34</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">It
+consisted of the following Install(s):</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">VA
+FILEMAN 22.2</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Checking
+Install for Package VA FILEMAN 22.2</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Will
+first run the Environment Check Routine, DI222ENV</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Install
+Questions for VA FILEMAN 22.2</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Incoming
+Files:</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.85
+      LANGUAGE  (including data)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Note:
+ You already have the 'LANGUAGE' File.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">I
+will OVERWRITE your data with mine.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.9
+       META DATA DICTIONARY</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Note:
+ You already have the 'META DATA DICTIONARY' File.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Want
+KIDS to Rebuild Menu Trees Upon Completion of Install? YES// <b><span style="background: #ffff00">&lt;Enter&gt;</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Want
+KIDS to INHIBIT LOGONs during the install? NO<b>// </b><b><span style="background: #ffff00">&lt;Enter&gt;</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Want
+to DISABLE Scheduled Options, Menu Options, and Protocols? NO//
+<b><span style="background: #ffff00">&lt;Enter&gt;</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Enter
+the Device you want to print the Install messages.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Enter
+a '^' to abort the install.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">DEVICE:
+HOME// <b><span style="background: #ffff00">&lt;Enter&gt;</span></b>
+TELNET</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Install
+Started for VA FILEMAN 22.2 : </font></font>
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+               <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Feb
+18, 2016@11:51:32</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Build
+Distribution Date: Feb 18, 2016</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Installing
+Routines:</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+               <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Feb
+18, 2016@11:51:33</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Running
+Pre-Install Routine: EN^DI222PRE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Initializing
+FileMan version 22.2...</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">......................................</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Now
+loading DIALOG and LANGUAGE
+Files...........................................</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">................................................................................</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">................................................................................</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">................................................................................</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">.........................................</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">..........</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">The
+following files have been installed:</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.11
+    INDEX</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.2
+     DESTINATION</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.31
+    KEY</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.4
+     PRINT TEMPLATE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.401
+   SORT TEMPLATE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.402
+   INPUT TEMPLATE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.403
+   FORM</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.404
+   BLOCK</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.44
+    FOREIGN FORMAT</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.46
+    IMPORT TEMPLATE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.5
+     FUNCTION</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.6
+     DD AUDIT</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.7
+     MUMPS OPERATING SYSTEM</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.81
+    DATA TYPE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.83
+    COMPILED ROUTINE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.84
+    DIALOG</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.85
+    LANGUAGE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">.9
+     META DATA DICTIONARY</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1
+       FILE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.1
+     AUDIT</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.11
+    ARCHIVAL ACTIVITY</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.12
+    FILEGRAM HISTORY</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.13
+    FILEGRAM ERROR LOG</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.2
+     ALTERNATE EDITOR</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.521
+   SQLI_SCHEMA</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.52101
+ SQLI_KEY_WORD</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.5211
+  SQLI_DATA_TYPE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.5212
+  SQLI_DOMAIN</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.5213
+  SQLI_KEY_FORMAT</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.5214
+  SQLI_OUTPUT_FORMAT</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.5215
+  SQLI_TABLE</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.5216
+  SQLI_TABLE_ELEMENT</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.5217
+  SQLI_COLUMN</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.5218
+  SQLI_PRIMARY_KEY</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.5219
+  SQLI_FOREIGN_KEY</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.52191
+ SQLI_ERROR_TEXT</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+  <font face="Courier New, serif"><font size="2" style="font-size: 9pt">1.52192
+ SQLI_ERROR_LOG</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Re-indexing
+entries in the DIALOG file..........................</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Compiling
+all forms ...</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DICATT
+                         (#.001)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DIPTED
+                         (#.1001)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DIKC
+EDIT                       (#.1101)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DIKC
+EDIT UI                    (#.1102)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DIKK
+EDIT                       (#.3101)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DIBTED
+                         (#.40001)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DIETED
+                         (#.40101)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DIEDIT
+                         (#.40201)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+BLOCK EDIT                 (#.40301)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+PAGE ADD                   (#.40302)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+PAGE EDIT                  (#.40303)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+PAGE SELECT                (#.40304)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+FORM EDIT                  (#.40305)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+HEADER BLOCK EDIT          (#.40306)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+FIELD ADD                  (#.40401)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+FIELD CAPTION ONLY         (#.40402)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+FIELD DD                   (#.40403)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+FIELD FORM ONLY            (#.40404)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+FIELD COMPUTED             (#.40405)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+BLOCK ADD                  (#.40406)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+BLOCK DELETE               (#.40407)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDGF
+HEADER BLOCK SELECT        (#.40408)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDXP
+FF FORM1                   (#.441)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">DDMP
+SPECIFY IMPORT             (#.461)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">XUEDIT
+CHARACTERISTICS          (#1)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+   <font face="Courier New, serif"><font size="2" style="font-size: 9pt">XUEXISTING
+USER                 (#2)</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">			.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">			.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">			.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">INITIALIZATION
+COMPLETED IN 3 SECONDS.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Initialization
+of FileMan version 22.2 has been completed.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Installing
+Data Dictionaries: </font></font>
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+               <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Feb
+18, 2016@11:51:36</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Installing
+Data: </font></font>
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+               <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Feb
+18, 2016@11:51:36</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Installing
+PACKAGE COMPONENTS: </font></font>
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Installing
+SECURITY KEY  ....</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Installing
+REMOTE PROCEDURE   .............</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Installing
+OPTION   ................................</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+               <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Feb
+18, 2016@11:51:37</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Running
+Post-Install Routine: POST^DI222POS</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Saving
+Routine: DIDT, As: %DT</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Saving
+Routine: DIDTC, As: %DTC</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Saving
+Routine: DIRCR, As: %RCR</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Routine:
+    DIDT Loaded, Saved as      %DT</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Routine:
+   DIDTC Loaded, Saved as     %DTC</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Routine:
+   DIRCR Loaded, Saved as     %RCR</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">DIDT
+;SFISC/GFT-DATE/TIME UTILITY ;2014-12-26  12:32 PM</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">;;22.2;VA
+FileMan;;Jan 05, 2016;Build 32</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">DIDTC
+;SFISC/XAK-DATE/TIME OPERATIONS ;3JAN2011</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">;;22.2;VA
+FileMan;;Jan 05, 2016;Build 32</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">DIRCR
+;SFISC/GFT-DELETE THIS LINE AND SAVE AS '%RCR'*** ;13DEC2012</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">;;22.2;VA
+FileMan;;Jan 05, 2016;Build 32</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Updating
+Routine file...</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Updating
+KIDS files...</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">VA
+FILEMAN 22.2 Installed. </font></font>
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+               <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Feb
+18, 2016@11:51:38</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Not
+a production UCI</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">NO
+Install Message sent </font></font>
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ 
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+ <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Call
+MENU rebuild</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Starting
+Menu Rebuild:  Feb 18, 2016@11:51:40</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Collecting
+primary menus in the New Person file...</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+                    <font face="Courier New, serif"><font size="2" style="font-size: 9pt">Primary
+menus found in the New Person file</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+                    <font face="Courier New, serif"><font size="2" style="font-size: 9pt">------------------------------------------</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">OPTION
+NAME         MENU TEXT                    # OF         LAST     LAST</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+                                                 <font face="Courier New, serif"><font size="2" style="font-size: 9pt">USERS
+       USED     BUILT</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">	.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">	.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">	.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Building
+secondary menu trees....</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Merging....
+done.</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Install
+Completed</font></font></p>
+<p style="margin-left: 3.18cm; margin-top: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<ol>
+	<ol start="9">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001725"></a><a name="_Hlt446807834"></a>
+		Post-Install TaskMan Procedures</h2>
+	</ol>
+</ol>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+TaskMan should have started when you rebooted or restarted the
+system. If TaskMan is not running, start TaskMan.</p>
+<p style="page-break-inside: avoid; margin-left: 0.64cm; margin-right: 0.33cm; margin-top: 0.11cm; margin-bottom: 0.11cm; border: none; padding: 0cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">&gt;<b>D
+^ZTMB</b></font></font></p>
+<ol>
+	<ol start="10">
+		<li><h2 class="western" style="text-indent: 0cm"><a name="_Toc458001726"></a>
+		Production Environment: Enable Logons</h2>
+	</ol>
+</ol>
+<p class="western">Use VA FileMan to edit the Inhibit Logon field in
+the VOLUME SET file (#14.5) for each volume set. This allows TaskMan
+to start tasks.</p>
+<p align="center" style="page-break-inside: avoid; margin-bottom: 0.11cm; page-break-after: avoid"><a name="_Toc458001749"></a>
+<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b>Figure
+5: Enable Logons</b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">&gt;<b><span style="background: #ffff00">D
+Q^DI</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">VA
+FileMan 22.2</font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Select
+OPTION: <b><span style="background: #ffff00">ENTER OR EDIT FILE
+ENTRIES</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">INPUT
+TO WHAT FILE: <b><span style="background: #ffff00">VOLUME SET</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">EDIT
+WHICH FIELD:  ALL// <b><span style="background: #ffff00">INHIBIT
+LOGONS ?</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">THEN
+EDIT FIELD: <b><span style="background: #ffff00">&lt;Enter&gt;</span></b></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<br/>
+
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<span id="Frame2" dir="ltr" style="position: absolute; top: 0.04cm; width: 11.41cm; border: none; padding: 0cm; background: #ffffff"><p style="margin-top: 0cm; margin-bottom: 0cm">
+	<font face="Arial, serif"><font size="2" style="font-size: 10pt"><b><font color="#000000">Replace
+	</font><font color="#000000"><i>&lt;Production Account&gt;</i></font><font color="#000000">
+	with your active Volume Set.</font></b></font></font></p>
+</span><img src="installation-rollback_html_48f32961a39ea60a.gif" name="Shape2" alt="Shape2" align="bottom" hspace="2" vspace="21" width="851" height="64"/>
+</p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">Select
+VOLUME SET: <i><b><span style="background: #ffff00">&lt;Production
+Account&gt;</span></b></i></font></font></p>
+<p style="page-break-inside: avoid; margin-left: 0.32cm; margin-right: 0.33cm; margin-top: 0cm; margin-bottom: 0cm; border: 1.00pt solid #000000; padding: 0.18cm; page-break-after: avoid">
+<font face="Courier New, serif"><font size="2" style="font-size: 9pt">INHIBIT
+LOGONS?:  YES// <b><span style="background: #ffff00">NO</span></b></font></font></p>
+<p style="margin-left: 3.18cm; margin-top: 0cm; margin-bottom: 0cm"><br/>
+
+</p>
+<p class="western" style="margin-top: 0cm; margin-bottom: 0cm"><a name="_Ref457395705"></a><a name="_Toc457395513"></a>
+<b>**** You have now completed the installation of VA FileMan. ****</b></p>
+<h1 class="western" style="margin-left: 0.96cm; text-indent: -0.96cm; page-break-before: always"><a name="_Ref457905669"></a><a name="_Toc458001727"></a><a name="_Toc457395510"></a>
+Implementation Procedure</h1>
+<h2 class="western"><a name="_Toc457395511"></a><a name="_Toc458001728"></a><a name="_Toc436046656"></a>
+Database Tuning</h2>
+<p class="western">There are no special database tuning requirements
+for VA FileMan 22.2.</p>
+<h2 class="western"><a name="_Toc458001729"></a><a name="_Toc457395512"></a>
+Verify Installation</h2>
+<p class="western">Verify the installation. Use KIDS option Install
+File Print, under the Utilities menu, and enter VA FILEMAN 22.2.&nbsp;
+Confirm that the STATUS field is “Install Complete”.</p>
+<p class="western"><br/>
+<br/>
+
+</p>
+<h1 class="western" style="margin-left: 0.96cm; text-indent: -0.96cm"><a name="_Toc458001730"></a><a name="_Ref457918848"></a>
+Back-Out Plan</h1>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+Back-out pertains to a return to the last known good operational
+state of the software and appropriate platform settings.</p>
+<p class="western">The method of backing out the VA FileMan (FM) 22.2
+patch is to restore from the backup that was taken in the “<font color="#0000ff"><u>Back Up System</u></font>”
+section. Due to the fact that FM 22.2 is a change to the system
+infrastructure, this is the only way to put the system back to the
+pre FM 22.2 state.</p>
+<h2 class="western"><a name="_Toc457395514"></a><a name="_Toc458001731"></a><a name="_Toc436046660"></a>
+Back-Out Strategy</h2>
+<p class="western">The need for a back-out would be determined by all
+affected organizations. This would primarily include representatives
+from Veterans Health Administration (VHA) and Enterprise Program
+Management (EPMO). In the case of the initial release a back-out
+would include removal of data, files and routines. In the case of
+future patches and releases the back-out strategy would be dependent
+on the contents of the released functionality and could include
+restoration of file definitions, routines or data.</p>
+<h2 class="western"><a name="_Toc457395515"></a><a name="_Toc458001732"></a><a name="_Toc436046661"></a>
+Back-Out Considerations</h2>
+<p class="western"><font color="#000000"><font face="Times New Roman, serif"><font size="2" style="font-size: 11pt">Back-out
+considerations would include impact on production VistA end-users and
+impact on Wide Area</font></font></font> Network.</p>
+<h3 class="western" style="margin-left: 1.6cm; text-indent: -1.6cm"><a name="_Toc457395516"></a><a name="_Toc458001733"></a><a name="_Toc436046662"></a>
+Load Testing</h3>
+<p class="western">Not applicable for FM 22.2.</p>
+<h3 class="western" style="margin-left: 1.6cm; text-indent: -1.6cm"><a name="_Toc457395517"></a><a name="_Toc458001734"></a><a name="_Toc436046663"></a>
+User Acceptance Testing</h3>
+<p class="western"><a name="_Toc436046664"></a>FM 22.2 User
+Acceptance Testing (UAT) is performed during VistA patch testing at
+test sites.</p>
+<h2 class="western"><a name="_Toc458001735"></a><a name="_Toc457395518"></a>
+Back-Out Criteria</h2>
+<p class="western">The FM 22.2 back-out criteria follow existing
+VistA back-out procedures.</p>
+<h2 class="western"><a name="_Toc457395519"></a><a name="_Toc458001736"></a><a name="_Toc436046665"></a>
+Back-Out Risks</h2>
+<p class="western">The FM 22.2 back-out risks are the same risks
+established with existing VistA back-out procedures.</p>
+<h2 class="western"><a name="_Toc457395520"></a><a name="_Toc458001737"></a><a name="_Toc436046666"></a>
+Authority for Back-Out</h2>
+<p class="western">The authority for the need of back-out would
+reside with VHA and EPMO representatives.</p>
+<h2 class="western"><a name="_Toc457395521"></a><a name="_Ref457395733"></a><a name="_Toc458001738"></a><a name="_Toc436046667"></a>
+Back-Out Procedure</h2>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+To back out FM 22.2, do the following:</p>
+<ul>
+	<li><p style="page-break-inside: avoid; margin-top: 0.11cm; margin-bottom: 0.11cm; page-break-after: avoid">
+	Restore backup to reset the system to the pre FM 22.2 state.</p>
+	<li><p style="margin-top: 0.11cm; margin-bottom: 0.11cm">You will
+	lose everything that has happened since the install.</p>
+</ul>
+<p class="caution-western"><img src="installation-rollback_html_71fdb0d04673f42f.png" name="Picture 6" alt="Caution" align="bottom" width="84" height="84" border="0"/>
+	CAUTION:
+Once the system has been restarted, the backout procedure is no
+longer possible.</p>
+<p class="western"><br/>
+<br/>
+
+</p>
+<h1 class="western" style="margin-left: 0.96cm; text-indent: -0.96cm"><a name="_Toc458001739"></a><a name="_Toc457395522"></a>
+Rollback Plan</h1>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+Rollback pertains to data.</p>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+VA FileMan (FM) 22.2 does <i>not</i> export any data.</p>
+<h2 class="western"><a name="_Toc457395523"></a><a name="_Toc458001740"></a><a name="_Toc436046669"></a>
+Rollback Considerations</h2>
+<p class="western">N/A. FM 22.2 does not export any data.</p>
+<h2 class="western"><a name="_Toc457395524"></a><a name="_Toc458001741"></a><a name="_Toc436046670"></a>
+Rollback Criteria</h2>
+<p class="western"><a name="_Toc436046671"></a>N/A. FM 22.2 does not
+export any data.</p>
+<h2 class="western"><a name="_Toc458001742"></a><a name="_Toc457395525"></a>
+Rollback Risks</h2>
+<p class="western"><a name="_Toc436046672"></a>N/A. FM 22.2 does not
+export any data.</p>
+<h2 class="western"><a name="_Toc458001743"></a><a name="_Toc457395526"></a>
+Authority for Rollback</h2>
+<p class="western" style="page-break-inside: avoid; page-break-after: avoid">
+Rollback <i>can</i> be authorized by system administrators once a
+problem has been identified. Enterprise Program Management Office
+(EPMO) should be informed immediately via a MailMan message sent to:</p>
+<p style="margin-left: 1.27cm">REDACTED</p>
+<h2 class="western"><a name="_Toc457395527"></a><a name="_Toc458001744"></a><a name="_Toc436046673"></a>
+Rollback Procedure</h2>
+<p class="western">N/A. FM 22.2 does not export any data.</p>
+<p class="western"><br/>
+<br/>
+
+</p>
+</body>
+</html>
